@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Water Sort Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #030305;
+            --accent-color: #00F0FF;
+            --accent-glow: rgba(0, 240, 255, 0.3);
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-blob {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: -1;
+            filter: blur(80px);
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .policy-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid var(--card-border);
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 12px;
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            color: var(--text-secondary);
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 80px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .policy-card { padding: 32px 24px; }
+            .container { margin: 40px auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-blob"></div>
+    <div class="container">
+        <header>
+            <h1>Water Sort Pro</h1>
+            <div class="last-updated">Privacy Policy • April 2026 Edition</div>
+        </header>
+
+        <div class="policy-card">
+            <p>Dev_K built the Water Sort Pro app as an Ad Supported app. This SERVICE is provided by Dev_K at no cost and is intended for use as is.</p>
+            <p>This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.</p>
+
+            <h2>Information Collection and Use</h2>
+            <p>For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.</p>
+            <p>The app does use third-party services that may collect information used to identify you. Links to the privacy policy of third-party service providers used by the app:</p>
+            <ul>
+                <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+            </ul>
+
+            <h2>Log Data</h2>
+            <p>I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</p>
+
+            <h2>Cookies</h2>
+            <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.</p>
+            <p>This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p>
+
+            <h2>Service Providers</h2>
+            <p>I may employ third-party companies and individuals due to the following reasons:</p>
+            <ul>
+                <li>To facilitate our Service;</li>
+                <li>To provide the Service on our behalf;</li>
+                <li>To perform Service-related services; or</li>
+                <li>To assist us in analyzing how our Service is used.</li>
+            </ul>
+
+            <h2>Security</h2>
+            <p>I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.</p>
+
+            <h2>Children’s Privacy</h2>
+            <p>These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.</p>
+            <p>Email: <strong>wekstuff@gmail.com</strong></p>
+        </div>
+
+        <footer>
+            &copy; 2026 Water Sort Pro. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
