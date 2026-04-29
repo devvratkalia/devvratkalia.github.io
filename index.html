@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Studios | Professional Brain-Nourishing Apps</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #2d3436;
+            --accent-color: #0984e3;
+            --secondary-text: #636e72;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            color: var(--secondary-text);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .app-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #e1f5fe;
+            color: #0277bd;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 50px 20px; }
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dev Studios</h1>
+        <p>Designing professional, brain-nourishing tools and puzzles that foster education and cognitive growth.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Our Apps</h2>
+        
+        <div class="app-grid">
+            <div class="app-card">
+                <span class="tag">Puzzle</span>
+                <h3>Shabad</h3>
+                <p>A multilingual word puzzle game designed to celebrate regional languages and sharpen linguistic skills.</p>
+            </div>
+
+            <div class="app-card">
+                <span class="tag">Utility</span>
+                <h3>AlarmX</h3>
+                <p>The heavy sleeper’s solution. Featuring focus-driven missions to ensure you start your day with purpose.</p>
+            </div>
+
+            <div class="app-card">
+                <span class="tag">Education</span>
+                <h3>Study Planner</h3>
+                <p>An intelligent revision tool using spaced repetition to help students master competitive exams.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Dev Studios. All rights reserved.</p>
+        <p>Support: <a href="mailto:your-email@example.com" class="contact-link">your-email@example.com</a></p>
+        <p>
+            <a href="privacy-policy.html" class="contact-link">Privacy Policy</a> | 
+            <a href="terms.html" class="contact-link">Terms of Service</a>
+        </p>
+    </div>
+
+</body>
+</html>
