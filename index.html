@@ -3,154 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Studios | Professional Brain-Nourishing Apps</title>
+    <title>Dev Studios | Refined Digital Experiences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fcfcfc;
-            --text-color: #2d3436;
-            --accent-color: #0984e3;
-            --secondary-text: #636e72;
-            --card-bg: #ffffff;
+            --bg: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #000000;
+            --border: #ececec;
+            --soft-gray: #f9f9f9;
         }
 
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            padding: 80px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        header p {
-            color: var(--secondary-text);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
+        .logo {
+            font-family: 'Instrument Serif', serif;
             font-size: 1.8rem;
-        }
-
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .app-card {
-            background: var(--card-bg);
-            border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 25px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .app-card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            background: #e1f5fe;
-            color: #0277bd;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-            border-top: 1px solid #eee;
-        }
-
-        .contact-link {
-            color: var(--accent-color);
+            font-style: italic;
             text-decoration: none;
-            font-weight: bold;
+            color: var(--text-primary);
         }
 
-        .contact-link:hover {
-            text-decoration: underline;
+        nav .links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        @media (max-width: 600px) {
-            header { padding: 50px 20px; }
-            header h1 { font-size: 2rem; }
+        nav .links a:hover { color: var(--accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 120px 5% 80px 5%;
+            max-width: 1200px;
+        }
+
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-top: 2rem;
+            line-height: 1.6;
+        }
+
+        /* --- Portfolio Grid --- */
+        .portfolio {
+            padding: 0 5% 100px 5%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .app-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .app-image-placeholder {
+            aspect-ratio: 16/10;
+            background-color: var(--soft-gray);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .app-item:hover .app-image-placeholder {
+            transform: scale(0.98);
+        }
+
+        .app-item h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .app-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* --- Philosophy Section --- */
+        .mission {
+            background-color: var(--soft-gray);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 5% 40px 5%;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-left { flex: 1; min-width: 300px; margin-bottom: 2rem; }
+        .footer-right { display: flex; gap: 4rem; }
+
+        .footer-col h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); }
+        .footer-col a { display: block; text-decoration: none; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .portfolio { grid-template-columns: 1fr; gap: 2rem; }
+            .hero h1 { font-size: 3.5rem; }
+            nav .links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Dev Studios</h1>
-        <p>Designing professional, brain-nourishing tools and puzzles that foster education and cognitive growth.</p>
-    </header>
+    <nav>
+        <a href="#" class="logo">Dev Studios</a>
+        <div class="links">
+            <a href="#work">Applications</a>
+            <a href="#mission">Philosophy</a>
+            <a href="mailto:your-email@example.com">Contact</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        <h2 class="section-title">Our Apps</h2>
-        
-        <div class="app-grid">
-            <div class="app-card">
-                <span class="tag">Puzzle</span>
+    <main>
+        <section class="hero">
+            <h1>Building for the <br>Thoughtful Mind.</h1>
+            <p>A specialized studio crafting brain-nourishing puzzles, educational tools, and high-utility minimalist applications.</p>
+        </section>
+
+        <section class="portfolio" id="work">
+            <a href="#" class="app-item">
+                <div class="app-image-placeholder">
+                    <span style="font-style: italic; color: #ccc;">Shabad App Preview</span>
+                </div>
                 <h3>Shabad</h3>
-                <p>A multilingual word puzzle game designed to celebrate regional languages and sharpen linguistic skills.</p>
-            </div>
+                <p>Multilingual linguistics for the modern scholar.</p>
+            </a>
 
-            <div class="app-card">
-                <span class="tag">Utility</span>
+            <a href="#" class="app-item">
+                <div class="app-image-placeholder">
+                    <span style="font-style: italic; color: #ccc;">AlarmX Preview</span>
+                </div>
                 <h3>AlarmX</h3>
-                <p>The heavy sleeper’s solution. Featuring focus-driven missions to ensure you start your day with purpose.</p>
-            </div>
+                <p>Purpose-driven mornings through focus missions.</p>
+            </a>
 
-            <div class="app-card">
-                <span class="tag">Education</span>
-                <h3>Study Planner</h3>
-                <p>An intelligent revision tool using spaced repetition to help students master competitive exams.</p>
+            <a href="#" class="app-item">
+                <div class="app-image-placeholder">
+                    <span style="font-style: italic; color: #ccc;">Revision Planner Preview</span>
+                </div>
+                <h3>Cognitive Planner</h3>
+                <p>Spaced-repetition for competitive excellence.</p>
+            </a>
+
+            <a href="#" class="app-item">
+                <div class="app-image-placeholder">
+                    <span style="font-style: italic; color: #ccc;">RF Calculator Preview</span>
+                </div>
+                <h3>Signal Intelligence</h3>
+                <p>Professional utility for field engineers.</p>
+            </a>
+        </section>
+
+        <section class="mission" id="mission">
+            <div class="mission-content">
+                <h2>Our Motto</h2>
+                <p>We believe software should nourish, not just distract. Dev Studios is dedicated to creating ad-supported, accessible educational tools that serve the community and build a smarter society.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <span class="logo">Dev Studios</span>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Crafted in Ludhiana, Punjab. <br> Serving a global community.
+            </p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                
+                <a href="mailto:wekstuff@gmail.com">Email Support : wekstuff@gmail.com</a>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2026 Dev Studios. All rights reserved.</p>
-        <p>Support: <a href="mailto:wekstuff@gmail.com" class="contact-link">wekstuff@gmail.com</a></p>
-        <p>
-            <a href="privacy-policy.html" class="contact-link">Privacy Policy</a> | 
-            <a href="terms.html" class="contact-link">Terms of Service</a>
-        </p>
-    </div>
+    </footer>
 
 </body>
 </html>
