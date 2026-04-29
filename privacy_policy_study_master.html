@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - StudyMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #020617;
+            --accent-color: #3B82F6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(148, 163, 184, 1);
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --card-border: rgba(51, 65, 85, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-blob {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            top: -300px;
+            left: -200px;
+            z-index: -1;
+            filter: blur(100px);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .policy-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: var(--accent-color);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            color: var(--text-secondary);
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 80px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .policy-card { padding: 32px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-blob"></div>
+    <div class="container">
+        <header>
+            <h1>StudyMaster</h1>
+            <div class="last-updated">Privacy Policy • Updated April 2026</div>
+        </header>
+
+        <div class="policy-card">
+            <p>StudyMaster is an educational tool designed to help you study more effectively using active recall and spaced repetition. This app is provided as an ad-supported service with an optional Pro subscription.</p>
+
+            <h2>2. Information Collection & Permissions</h2>
+            <p>StudyMaster is designed with privacy in mind. Most of your study data (subjects, topics, and scores) is stored locally on your device. However, to provide our core features, the app may request the following permissions:</p>
+            <ul>
+                <li><strong>Usage Stats</strong>: To help you stay focused, the app optionally requests access to usage statistics to track and warn you about distracting apps during focus sessions.</li>
+                <li><strong>Camera</strong>: If used, the camera is only utilized for scanning textbook indices to quickly add topics. No images are uploaded to our servers.</li>
+                <li><strong>Local Storage</strong>: Your study curriculum and recall history are stored securely on your device.</li>
+            </ul>
+
+            <h2>3. Third-Party Services</h2>
+            <p>The app uses third-party services that may collect information used to identify you. These include:</p>
+            <ul>
+                <li><a href="https://www.google.com/policies/privacy/">Google Play Services</a> (For app functionality)</li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en">AdMob</a> (For serving ads)</li>
+                <li><a href="https://play.google.com/about/monetization-ads/ads/billing-address/">Google Play Billing</a> (For Pro subscriptions)</li>
+            </ul>
+
+            <h2>3. Log Data & Analytics</h2>
+            <p>In the event of an error, we may collect "Log Data" which includes information like your device IP address, operating system version, and the time of the error. This is used solely for debugging and improving the app.</p>
+
+            <h2>4. Children’s Privacy</h2>
+            <p>Our service is not intended for individuals under the age of 13. We do not knowingly collect personal data from children.</p>
+
+            <h2>5. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at: <strong>wekstuff@gmail.com</strong></p>
+        </div>
+
+        <footer>
+            &copy; 2026 StudyMaster. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
