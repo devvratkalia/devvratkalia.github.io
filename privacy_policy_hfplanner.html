@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - HF Planner : Ham Radio guide</title>
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --accent: #d97400;
+            --section-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--primary-bg);
+        }
+
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #000; }
+        h2 { font-size: 1.5rem; margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        p { margin-bottom: 1.2rem; }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--section-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+        th { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="last-updated">HF Planner : Ham Radio guide &middot; Last updated 2 August 2026</p>
+
+<p>This policy explains what HF Planner : Ham Radio guide (&ldquo;the app&rdquo;, package
+<code>com.devvratkalia.hfplannerhamradioguide</code>) does with your information. It is written to
+describe what the app actually does, not what it might do.</p>
+
+<div class="card">
+    <strong>The short version.</strong> The app has no accounts and no sign-in. Your plans, settings
+    and solar values are stored on your device only &mdash; we operate no server and cannot see them.
+    The app makes network requests to fetch public space-weather data, to load map tiles, and to serve
+    ads. Location, if you choose to use it, never leaves your device.
+</div>
+
+<h2>1. Information stored on your device</h2>
+<p>The following is written to your device's local storage and is never transmitted to us:</p>
+<ul>
+    <li><strong>Saved plans</strong> &mdash; the transmit and receive locations, time window and solar
+        snapshot for each plan you save.</li>
+    <li><strong>Preferences</strong> &mdash; theme, default grid square, distance units, UTC/local
+        display preference, and whether onboarding has been completed.</li>
+    <li><strong>Cached space-weather values</strong> &mdash; the last solar indices retrieved, so
+        planning works offline.</li>
+</ul>
+<p>Uninstalling the app removes all of it. You can also clear the cached solar data at any time from
+Settings.</p>
+
+<h2>2. Location</h2>
+<p>The app requests location permission for exactly one optional action: the GPS button that fills in
+your transmit grid square. It is requested only at the moment you tap that button, never at startup.</p>
+<p>The position is converted to a Maidenhead locator <strong>on your device</strong> and is not
+transmitted to us or to any third party. It is not stored beyond the plan you choose to save, which
+itself stays on your device.</p>
+<p>Declining the permission is fully supported &mdash; grid-square and latitude/longitude entry remain
+available, so no feature becomes unreachable.</p>
+
+<h2>3. Network requests the app makes</h2>
+<table>
+    <tr><th>Destination</th><th>Purpose</th><th>What is sent</th></tr>
+    <tr>
+        <td>NOAA Space Weather Prediction Center<br><code>services.swpc.noaa.gov</code></td>
+        <td>Fetch current solar flux, sunspot number and geomagnetic indices</td>
+        <td>An unauthenticated request for a public data file. No identifiers, no account, no
+            location, no plan data.</td>
+    </tr>
+    <tr>
+        <td>OpenStreetMap<br><code>tile.openstreetmap.org</code></td>
+        <td>Map tiles for the optional map location picker</td>
+        <td>The map area you are viewing, as standard tile coordinates, plus your IP address as with
+            any web request. Subject to the
+            <a href="https://operations.osmfoundation.org/policies/tiles/">OSM tile usage policy</a>.</td>
+    </tr>
+    <tr>
+        <td>Unity LevelPlay / ironSource and mediated ad networks</td>
+        <td>Serve advertisements in the free tier</td>
+        <td>Advertising identifiers and standard device/ad-request data collected by those SDKs. See
+            section 4.</td>
+    </tr>
+    <tr>
+        <td>Apple App Store / Google Play</td>
+        <td>Subscription purchases and restore</td>
+        <td>Handled entirely by the platform. We never see or store your payment details.</td>
+    </tr>
+</table>
+<p>The app is designed to keep working without any of these. With no network connection, planning, the
+frequency matrix, the RF chart, saved plans and the band reference all continue to function using
+cached or manually entered values.</p>
+
+<h2>4. Advertising</h2>
+<p>The free tier shows ads through Unity LevelPlay (formerly ironSource) mediation. These SDKs may
+collect advertising identifiers and device information to select and measure ads. That data is
+processed by those providers under their own policies:</p>
+<ul>
+    <li><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity / ironSource privacy policy</a></li>
+</ul>
+<p>On iOS you are asked for App Tracking Transparency permission before any advertising identifier is
+used. Declining is respected. On Android you can reset or delete your advertising ID in system
+settings. Purchasing a Pro subscription removes ads.</p>
+
+<h2>5. Subscriptions</h2>
+<p>Pro is sold as an auto-renewing subscription (monthly or yearly) through the Apple App Store or
+Google Play. Those platforms process the purchase and hold the payment information. The app only
+receives whether an active entitlement exists.</p>
+
+<h2>6. Artificial intelligence features</h2>
+<p>The app contains an optional AI explanation feature. When it is enabled, the text of your query is
+sent to the configured AI provider to generate a response. Before this can happen the app shows a
+disclosure naming the provider and its endpoint, and requires your explicit acceptance. If you do not
+accept, nothing is sent. This feature is disabled in the current release.</p>
+
+<h2>7. What we do not do</h2>
+<ul>
+    <li>No accounts, no sign-in, no profile.</li>
+    <li>No analytics or crash-reporting SDK collecting your usage.</li>
+    <li>No selling or sharing of personal information.</li>
+    <li>No background location, and no location transmitted anywhere.</li>
+    <li>No server operated by us that holds your data.</li>
+</ul>
+
+<h2>8. Children</h2>
+<p>The app is not directed at children under 13, and we do not knowingly collect personal information
+from them.</p>
+
+<h2>9. Your choices</h2>
+<ul>
+    <li>Deny or revoke location permission &mdash; the app remains fully usable.</li>
+    <li>Decline App Tracking Transparency on iOS, or reset your advertising ID on Android.</li>
+    <li>Clear cached solar data from Settings.</li>
+    <li>Delete saved plans individually, or uninstall the app to remove everything.</li>
+</ul>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, the date at the top of this page is updated. Material changes will also be
+reflected in the in-app copy of this policy.</p>
+
+<h2>11. Contact</h2>
+<p>Questions about this policy, or a request relating to your data, can be sent to
+<a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>.</p>
+
+<footer>
+    HF Planner : Ham Radio guide &middot; Published by Dev_K (Devvrat Kalia)<br>
+    <a href="terms_hfplanner.html">Terms of Service</a> &middot;
+    <a href="index.html">All apps</a>
+</footer>
+
+</body>
+</html>
