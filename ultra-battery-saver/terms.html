@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,170 +8,146 @@
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.25rem 1.1rem 4rem;
     color: #1a1a1a;
-    background: #ffffff;
+    background: #fff;
     -webkit-text-size-adjust: 100%;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 18px 64px; }
-  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 4px; }
-  h2 { font-size: 1.2rem; margin: 32px 0 8px; }
-  h3 { font-size: 1.02rem; margin: 20px 0 6px; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 .3rem; }
+  h2 { font-size: 1.18rem; margin: 2.2rem 0 .6rem; }
+  h3 { font-size: 1rem; margin: 1.4rem 0 .4rem; }
   p, li { font-size: 1rem; }
-  ul { padding-left: 1.25rem; }
-  li { margin: 4px 0; }
-  a { color: #0a63c9; word-break: break-word; }
-  .meta { color: #555; font-size: 0.92rem; margin: 0 0 20px; }
+  ul, ol { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  .meta { font-size: .9rem; color: #555; margin: 0 0 1.5rem; }
+  .meta div { margin: .15rem 0; }
   .callout {
-    border-left: 4px solid #c9560a; background: #fdf1e8;
-    padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 16px 0;
+    border-left: 4px solid #c0392b;
+    background: #fdf1f0;
+    padding: .85rem 1rem;
+    margin: 1.25rem 0;
+    border-radius: 0 6px 6px 0;
   }
-  code { background: #f0f0f0; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
-  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e3e3e3; color: #555; font-size: 0.9rem; }
+  .callout p { margin: .4rem 0; }
+  code { background: #f0f0f0; padding: .1rem .3rem; border-radius: 3px; font-size: .88em; }
+  a { color: #1155cc; overflow-wrap: break-word; }
+  hr { border: 0; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  footer { font-size: .88rem; color: #555; }
   @media (prefers-color-scheme: dark) {
     body { color: #e8e8e8; background: #121212; }
-    a { color: #7db6ff; }
-    .meta, footer { color: #aaa; }
-    .callout { background: #2b1c10; border-left-color: #e0873f; }
-    code { background: #242424; }
-    footer { border-top-color: #333; }
+    .meta, footer { color: #a8a8a8; }
+    .callout { background: #2a1614; border-left-color: #e74c3c; }
+    code { background: #1f1f1f; }
+    a { color: #7aa7ff; }
+    hr { border-top-color: #2c2c2c; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <h1>Terms of Use</h1>
-  <p class="meta">
-    <strong>Navigator + Ultra Battery Saver</strong><br>
-    Publisher: Dev_K &middot; Package: <code>com.devvratkalia.navigatorplusbatterysaver</code><br>
-    Effective date: 9 August 2026
-  </p>
+<h1>Terms of Use</h1>
+<p class="meta">
+  <div><strong>App:</strong> Navigator + Ultra Battery Saver</div>
+  <div><strong>Package:</strong> <code>com.devvratkalia.navigatorplusbatterysaver</code></div>
+  <div><strong>Publisher:</strong> Dev_K</div>
+  <div><strong>Effective date:</strong> 9 August 2026</div>
+  <div><strong>Contact:</strong> <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a></div>
+</p>
 
-  <p>These Terms of Use (“Terms”) are an agreement between you and Dev_K (“we”, “us”) about your use
-  of the Navigator + Ultra Battery Saver app (the “App”). By downloading, installing, or using the
-  App, you agree to these Terms. If you don’t agree, please don’t use the App.</p>
+<p>These terms are the agreement between you and Dev_K for the use of Navigator + Ultra Battery Saver. By installing or using the app, you accept them. If you don't accept them, uninstall the app.</p>
 
-  <h2>1. Licence to use the App</h2>
-  <p>We grant you a personal, non-exclusive, non-transferable, revocable licence to use the App on
-  devices you own or control, for your own non-commercial use, subject to these Terms and the rules
-  of the app store you downloaded it from.</p>
+<h2>1. What the app does</h2>
+<p>The app provides four things: a battery saver that lists your installed apps and lets you stop the ones you haven't marked as important; a compass; downloadable offline maps and offline turn-by-turn navigation; and, if you grant location permission, background recording and upload of your device's location.</p>
 
-  <h2>2. What the App does</h2>
-  <ul>
-    <li>Lists your installed apps, lets you select the ones important to you, and stops the rest to
-      help save battery.</li>
-    <li>Provides a compass and GPS-based navigation.</li>
-    <li>Lets you download open-source maps and navigate offline.</li>
-  </ul>
-
-  <h2>3. Battery-saving features — important</h2>
-  <div class="callout">
-    Stopping an app can interrupt what that app is doing. Background tasks, alarms, reminders,
-    messaging, health tracking, and notifications from apps you stop may be delayed or missed until
-    those apps are reopened.
-  </div>
-  <p>You are responsible for choosing which apps to keep active. Do not stop apps you rely on for
-  time-sensitive alerts or safety. Battery results vary by device, operating system, and usage, and
-  we do not guarantee any specific amount of battery savings.</p>
-
-  <h2>4. Navigation &amp; maps — safety</h2>
-  <ul>
-    <li>Offline maps come from open-source providers and may be incomplete, out of date, or
-      inaccurate. Roads, closures, and conditions change.</li>
-    <li>Navigation is an aid, not a substitute for your own judgement. Always obey traffic laws,
-      road signs, and local regulations.</li>
-    <li><strong>Do not operate the App while driving.</strong> Do not rely on the App for
-      emergency, aviation, marine, or other safety-critical navigation.</li>
-    <li>GPS and compass accuracy depend on your device, surroundings, and signal conditions.</li>
-  </ul>
-
-  <h2>5. Ads</h2>
-  <p>The App is supported by advertising delivered through Unity LevelPlay mediation and Unity Ads
-  (banner, interstitial, and rewarded formats). By using the App you understand it displays ads and
-  that advertising identifiers and device information are processed as described in our
-  Privacy Policy. We are not responsible for the content of third-party ads.</p>
-
-  <h2>6. Pro subscriptions</h2>
-  <p>The App offers optional auto-renewing subscriptions: <code>pro_monthly</code> and
-  <code>pro_yearly</code>.</p>
-  <ul>
-    <li>Payment is charged to your Google Play or Apple App Store account at confirmation of
-      purchase.</li>
-    <li>Subscriptions renew automatically for the same period at the then-current price unless you
-      cancel at least 24 hours before the end of the current period.</li>
-    <li>You can manage or cancel a subscription in your app store account settings. Deleting the App
-      does not cancel a subscription.</li>
-    <li>Prices, features, and taxes may vary by region and may change; we’ll give notice of price
-      changes as required by the app stores.</li>
-    <li>Refunds are handled by the app store under its policies, not by us.</li>
-  </ul>
-
-  <h2>7. Acceptable use</h2>
-  <p>You agree not to:</p>
-  <ul>
-    <li>Use the App to track, monitor, or locate another person without their knowledge and consent.</li>
-    <li>Reverse-engineer, decompile, or tamper with the App except where the law allows.</li>
-    <li>Use the App for any unlawful purpose or in violation of others’ rights.</li>
-    <li>Interfere with the App’s security or attempt to access data you’re not authorised to access.</li>
-  </ul>
-
-  <h2>8. Intellectual property</h2>
-  <p>The App, its name, and its original content are owned by Dev_K and protected by law. Map data is
-  provided by open-source projects (such as OpenStreetMap contributors) and remains subject to their
-  respective licences and attribution requirements.</p>
-
-  <h2>9. Third-party services</h2>
-  <p>The App relies on third-party services, including the app stores, Unity’s advertising services,
-  and open-source map providers. Your use of those services is also governed by their terms and
-  privacy policies, which we don’t control.</p>
-
-  <h2>10. Disclaimer of warranties</h2>
-  <p>The App is provided “as is” and “as available”, without warranties of any kind, whether express
-  or implied, including fitness for a particular purpose, accuracy, or non-infringement, to the
-  fullest extent permitted by law. We do not warrant that the App will be uninterrupted, error-free,
-  or that maps and navigation will be accurate.</p>
-
-  <h2>11. Limitation of liability</h2>
-  <p>To the fullest extent permitted by law, Dev_K will not be liable for any indirect, incidental,
-  special, or consequential damages, or for loss of data, missed notifications, navigation errors,
-  or battery-related outcomes, arising from your use of the App. Nothing in these Terms limits
-  liability that cannot be limited under applicable law.</p>
-
-  <h2>12. Termination</h2>
-  <p>You may stop using the App at any time by uninstalling it. We may suspend or end your access if
-  you breach these Terms. Sections that by their nature should survive (such as intellectual
-  property, disclaimers, and limitation of liability) will continue to apply.</p>
-
-  <h2>13. Governing law</h2>
-  <p>These Terms are governed by the laws of the country or state in which the publisher is
-  established, without regard to conflict-of-law rules, unless mandatory local consumer-protection
-  laws in your place of residence apply.</p>
-
-  <h2>14. Changes to these Terms</h2>
-  <p>We may update these Terms from time to time. We’ll update the “Effective date” above and, for
-  significant changes, provide notice in the App. Continued use after an update means you accept the
-  revised Terms.</p>
-
-  <h2>15. Contact</h2>
-  <p>Questions about these Terms? Email
-  <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>.</p>
-
-  <footer>
-    © 2026 Dev_K. Navigator + Ultra Battery Saver. All rights reserved.
-  </footer>
-
+<h2>2. Location tracking — your responsibility</h2>
+<div class="callout">
+  <p>If you grant location permission, this app records where the device goes — including while the app is closed — and uploads that history to our servers. The <a href="#privacy">Privacy Policy</a> sets out the detail.</p>
+  <p><strong>Only install and enable this on a device you own and personally use, or on a device whose user knows about the tracking and has agreed to it.</strong></p>
 </div>
+<p>You must not use the app to track another person without their knowledge and informed consent. That includes a partner, an ex-partner, an adult family member, an employee, or anyone else. Doing so is illegal in most countries — it can constitute stalking, unlawful surveillance, or a breach of data protection law — and you, not Dev_K, are responsible for it.</p>
+<p>If you install the app on a device you provide to someone else (a child, an employee with a company phone), you are the one who must tell them it is there and what it does, and obtain any consent the law where you live requires. We may suspend or terminate access, and cooperate with law enforcement, where we have reason to believe the app is being used to surveil someone without consent.</p>
+
+<h2>3. Navigation is an aid, not an authority</h2>
+<ul>
+  <li>Offline maps come from open-source contributors and can be out of date, incomplete, or wrong. Roads change, one-way systems change, bridges close.</li>
+  <li>Routes may be impassable, unsafe, illegal for your vehicle, or simply not the best way.</li>
+  <li>The compass depends on your device's magnetometer and can be thrown off by metal, magnets, phone cases, and electrical interference.</li>
+  <li>GPS accuracy varies and can fail entirely indoors, in tunnels, in dense cities, and under tree cover.</li>
+</ul>
+<p><strong>Always watch the road, obey traffic signs and local law, and use your own judgement.</strong> Do not operate the app while driving. Do not rely on it in the wilderness, at sea, in the air, or in any emergency or life-safety situation. It is not a substitute for proper navigation equipment or emergency services.</p>
+
+<h2>4. The battery saver</h2>
+<p>Battery savings are not guaranteed. Actual results depend on your device, its operating system version, and how you use it. Some devices restrict what one app may do to another, and the app can only ask the operating system to stop something.</p>
+<p><strong>Stopping apps has consequences.</strong> An app you stop may not deliver alarms, messages, calls, calendar reminders, health or fitness tracking, fall detection, medication reminders, delivery alerts, or two-factor authentication prompts. You choose which apps to stop, and you accept the results. Do not stop apps you depend on for safety or medical purposes.</p>
+
+<h2>5. Ads</h2>
+<p>The free version shows banner, interstitial, and rewarded ads served through Unity LevelPlay mediation. We do not control which advertisers appear or vouch for what they advertise. Anything you buy from an advertiser is between you and them.</p>
+
+<h2>6. Subscriptions</h2>
+<ul>
+  <li>Two optional subscriptions are offered: <code>pro_monthly</code> (billed monthly) and <code>pro_yearly</code> (billed annually). Current prices are shown in the app before you confirm.</li>
+  <li>Payment is taken by Google Play or the Apple App Store when you confirm the purchase.</li>
+  <li><strong>Subscriptions renew automatically</strong> unless you cancel at least 24 hours before the end of the current period.</li>
+  <li>Cancel any time through your store account — Google Play → Subscriptions, or Apple ID → Subscriptions. Uninstalling the app does <em>not</em> cancel a subscription. We cannot cancel it for you.</li>
+  <li>Cancelling stops future charges. You keep premium features until the paid period ends.</li>
+  <li><strong>Refunds are handled by the store</strong> under its own policy, not by us. If you are in the EU/UK, your statutory withdrawal rights still apply.</li>
+  <li>Any free trial converts to a paid subscription unless you cancel before it ends.</li>
+  <li>We may change prices; you will be told in advance and the change applies only from the next renewal.</li>
+</ul>
+<p><strong>A subscription removes ads. It does not turn off location collection</strong> — that is controlled solely by the permission, which you can revoke at any time.</p>
+
+<h2>7. What you may and may not do</h2>
+<p>We grant you a personal, non-transferable, non-exclusive licence to use the app on devices you control. You may not:</p>
+<ul>
+  <li>use it to track anyone without their informed consent (see Section 2);</li>
+  <li>reverse-engineer, decompile, or modify the app, except where law expressly permits it;</li>
+  <li>resell, rent, or redistribute the app or bundle it into another product;</li>
+  <li>interfere with our servers, or attempt to access data belonging to other users;</li>
+  <li>use it for anything illegal, or in breach of the licences of the open-source map data it uses.</li>
+</ul>
+<p>The app, its name, and its branding remain the property of Dev_K. Map data remains the property of its contributors under its own open-source licence — OpenStreetMap data is © OpenStreetMap contributors, available under the Open Database Licence.</p>
+
+<h2>8. Third-party services</h2>
+<p>The app relies on Unity LevelPlay and Unity Ads, the Google Play and Apple app stores, and open-source map and tile providers. Each has its own terms and privacy policy. We are not responsible for their availability, accuracy, or conduct.</p>
+
+<h2>9. No warranty</h2>
+<p>The app is provided "as is" and "as available". To the fullest extent the law allows, we disclaim all warranties, express or implied, including fitness for a particular purpose, accuracy, and uninterrupted operation. We do not promise the app is error-free, that maps are correct, that navigation is safe, or that battery life improves.</p>
+
+<h2>10. Limitation of liability</h2>
+<p>To the fullest extent the law allows, Dev_K is not liable for indirect, incidental, special, or consequential damages, or for lost data, lost profits, missed notifications, or any loss arising from reliance on navigation or the compass. Our total liability for any claim relating to the app is limited to the greater of the amount you paid us in the twelve months before the claim, or USD 50.</p>
+<p>Nothing here excludes liability that cannot be excluded by law — including liability for death or personal injury caused by negligence, for fraud, or your non-waivable statutory consumer rights. If you are a consumer in the EU, UK, or another jurisdiction with mandatory consumer protections, those rights apply in full and are unaffected by this section.</p>
+
+<h2>11. Indemnity</h2>
+<p>You agree to indemnify Dev_K against claims, losses, and legal costs arising from your use of the app in breach of these terms — in particular, from using it to track a person without their consent.</p>
+
+<h2>12. Termination</h2>
+<p>You may stop using the app at any time by uninstalling it. We may suspend or terminate your access if you breach these terms, especially Section 2. Sections 9, 10, 11, and 13 survive termination.</p>
+
+<h2>13. Governing law</h2>
+<p>These terms are governed by the laws of India, and the courts of India have jurisdiction, except where the mandatory consumer law of your country of residence gives you the right to bring proceedings locally.</p>
+
+<h2>14. Changes to these terms</h2>
+<p>We may update these terms. Material changes will be notified in the app before they take effect. Continuing to use the app after that means you accept the updated terms.</p>
+
+<h2 id="privacy">15. Privacy</h2>
+<p>The Privacy Policy forms part of these terms and explains exactly what is collected and how to stop it. Read it before granting location permission.</p>
+
+<hr>
+<footer>
+  <p><strong>Contact</strong><br>
+  Dev_K — <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a></p>
+  <p>Last updated 9 August 2026.</p>
+</footer>
+
 </body>
 </html>
 ```
 
-A couple of notes on what I included and left out:
+Two things to fix on the app side before submission, since the policy now has to match the build:
 
-- **Location** is described honestly as on-device only (compass + navigation), matching your ground-truth data-safety matrix, which does not list location as collected or uploaded. I did not write copy presenting background location upload as "calibration."
-- I added an **acceptable-use clause** in the Terms prohibiting tracking others without consent — appropriate for an app with location and app-control features.
-- Ads, subscriptions (`pro_monthly`/`pro_yearly`), and "no accounts" are reflected per the ground truth.
-
-If you confirm the app really does transmit location and you want that disclosed properly, tell me the destination server, purpose, retention, and who receives it, and I'll write the transparent tracking-disclosure version.
+1. **The permission rationale string in the app must say what the policy says.** If the in-app prompt claims "compass and GPS calibration" while location is uploaded and retained, Google Play's Location Permissions policy and Apple's §5.1.2 both treat that as a rejectable misrepresentation, and it's an Art. 5/13 GDPR transparency failure independent of store review. Same for `lib/screens/privacy_policy_screen.dart` — your matrix already requires it to agree with the hosted policy.
+2. **Your §2 matrix has no row for uploaded precise location.** Play Data safety and App Store Connect need `Location → Precise location`, collected, not shared, purpose "app functionality" plus whatever the tracking feature is called, and — since it survives per-device across sessions — a decision on linked/tracking. Add the row before you transcribe.
