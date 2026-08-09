@@ -34,15 +34,16 @@ footer{font-size:.85rem;color:#5a5a60;margin-top:2.5rem}
 App: <strong>Focus Timer</strong> (<code>com.devvratkalia.focustimer</code>)<br>
 Publisher: <strong>Dev_K</strong><br>
 Contact: <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a><br>
-Effective date: <strong>31 July 2026</strong>
+Effective date: <strong>9 August 2026</strong>
 </p>
 
 <p>Focus Timer is a minimalist pomodoro timer with ambient sounds and streak tracking, made mainly for students. This policy explains, in plain language, what the app collects, who it goes to, and what you can do about it.</p>
 
-<p>Two things are worth saying up front:</p>
+<p>Three things are worth saying up front:</p>
 <ul>
   <li><strong>Your timer data stays on your device.</strong> There is no account, no sign-in, and no server of ours that stores your sessions or streaks.</li>
-  <li><strong>The app shows ads, and ads mean identifiers.</strong> The advertising SDK collects your device's advertising ID and related device information and shares it with ad networks, including for tracking and personalised advertising. That happens whether or not you ever tap an ad.</li>
+  <li><strong>The free app shows ads, and ads mean identifiers.</strong> The advertising SDK collects your device's advertising ID and related device information and shares it with ad networks, including for tracking and personalised advertising. That happens whether or not you ever tap an ad.</li>
+  <li><strong>There is now a paid Pro subscription.</strong> It is billed by Google Play or Apple, not by us. We never see your card, and we never receive your name or billing address — only the entitlement status the store reports back to the app. Pro removes ads, and with ads off the collection described in section 3 does not take place.</li>
 </ul>
 
 <hr>
@@ -56,8 +57,9 @@ Effective date: <strong>31 July 2026</strong>
   <li>Timer settings — focus and break lengths, number of rounds, ambient sound choice, volume.</li>
   <li>Session history and streaks — completed pomodoros, dates, and the streak counter derived from them.</li>
   <li>App preferences — theme, notification and sound toggles, and whether you have dismissed onboarding or consent screens.</li>
+  <li>Your Pro entitlement flag and the app-lock setting described in section 5, held in your device's encrypted keystore (Keychain on iOS, Keystore on Android).</li>
 </ul>
-<p>You can erase all of it at any time by clearing the app's storage in your device settings, or by uninstalling the app. Because this data lives only on your device, uninstalling deletes it permanently — there is no cloud backup on our side to restore it from, though your operating system's own device backup may include it if you have that turned on.</p>
+<p>You can erase all of it at any time by clearing the app's storage in your device settings, or by uninstalling the app. Because this data lives only on your device, uninstalling deletes it permanently — there is no cloud backup on our side to restore it from, though your operating system's own device backup may include it if you have that turned on. Uninstalling does <em>not</em> cancel a subscription; see section 4.</p>
 
 <h2>3. Advertising — what the ad SDKs collect</h2>
 <p>Focus Timer uses <strong>Unity LevelPlay</strong> mediation with the <strong>Unity Ads</strong> adapter to serve banner, interstitial, and rewarded ads. Mediation means LevelPlay may pass an ad request to other advertising networks in its network list to fill the slot.</p>
@@ -80,77 +82,67 @@ Effective date: <strong>31 July 2026</strong>
 
 <p>None of this is linked by us to a name, email address, or account, because the app has no accounts. It is nevertheless <em>device-level</em> data, and advertising identifiers are designed to be persistent across apps until you reset them — see section 8 for how.</p>
 
+<h3>Ads and the Pro subscription</h3>
+<p>Ads are how the free version pays for itself. While you hold an active Pro subscription, the app does not show ads: the advertising SDK is not started, so the collection and sharing set out in the table above does not happen for that period. If your subscription is cancelled or lapses, the app returns to the ad-supported mode and this section applies again.</p>
+
 <h3>Location</h3>
 <p>Focus Timer does not ask for device location permission and does not collect GPS or precise location. Ad networks receiving an ad request can still infer an approximate location (roughly city or region level) from your IP address and network information, as is standard for internet advertising.</p>
 
 <h3>Ad partner policies</h3>
-<p>Once data reaches an ad partner, that partner is the controller of it and handles it under its own policy. The primary partners are Unity (LevelPlay mediation and Unity Ads) and the advertising networks Unity mediates. Their privacy policies govern what they do with the data, including how long they keep it.</p>
+<p>Once data reaches an ad partner, that partner is the controller of it and handles it under its own policy. The primary partners are Unity (LevelPlay mediation and the Unity Ads network) and the demand networks LevelPlay mediates to. Unity's privacy policy is at <a href="https://unity.com/legal/privacy-policy">unity.com/legal/privacy-policy</a>, and Unity's list of the ad partners it works with is published alongside it. We do not control what those partners do with data after it leaves the device, and we have no ability to reach into their systems to retrieve or delete it on your behalf — requests of that kind have to go to them, though we will point you to the right contact if you email us.</p>
 
-<h2>4. Consent for ads in the EEA, UK, and Switzerland</h2>
-<p>If you are in the European Economic Area, the United Kingdom, or Switzerland, the app shows a consent message from a certified consent management platform before advertising identifiers are collected for personalised advertising. Your choice is passed to the advertising SDKs, and the legal basis for that processing is your consent. You can change your choice later from the privacy or settings screen inside the app. If you decline, you will still see ads, but they will be non-personalised or contextual, and the SDKs will limit what they collect accordingly.</p>
-
-<h2>5. Tracking permission on iOS</h2>
-<p>On iOS, the app presents Apple's App Tracking Transparency prompt before it reads the IDFA. If you decline, the app does not access the IDFA and ads become non-personalised. You can change this at any time in <em>Settings → Privacy &amp; Security → Tracking</em>.</p>
-
-<h2>6. Pro subscriptions</h2>
-<p>Focus Timer offers optional subscriptions — <code>pro_monthly</code> and <code>pro_yearly</code>. Purchases are processed entirely by <strong>Google Play Billing</strong> or the <strong>Apple App Store</strong>, depending on where you installed the app.</p>
+<h2>4. Pro subscription and purchases</h2>
+<p>Focus Timer offers optional subscriptions — a monthly plan and a yearly plan — that remove ads and unlock Pro features. Payment is handled entirely by the store you installed the app from: <strong>Google Play Billing</strong> on Android, <strong>the App Store</strong> on iOS. We are not a payment processor and there is no checkout of ours.</p>
 <ul>
-  <li>We never see or receive your card number, bank details, or billing address. The store handles payment.</li>
-  <li>The app receives only a purchase receipt or entitlement status from the store so it can tell whether your subscription is currently active.</li>
-  <li>The store keeps its own record of the transaction under its own privacy policy, and provides us with aggregate, non-identifying sales reporting.</li>
+  <li><strong>We never receive</strong> your card or bank details, your billing address, or your store account name or email.</li>
+  <li><strong>We do receive</strong>, through the store's billing API, an anonymous purchase token or receipt, the product identifier of the plan, and whether the subscription is currently active, expired, cancelled, or in a grace or billing-retry period. The app uses this only to decide whether to unlock Pro and hide ads.</li>
+  <li><strong>Stored on your device</strong> is the resulting entitlement state, kept in the encrypted keystore described in section 5. Restoring purchases on a new device re-queries the store; it does not move any of your timer history.</li>
 </ul>
-<p>Buying a subscription does not create an account with us and does not give us your email address.</p>
+<p>Google and Apple process your payment as independent controllers under their own privacy policies, and they retain purchase records for tax and accounting reasons regardless of what we do. Cancellations and refunds are handled in your store account — see the Terms of Use.</p>
 
-<h2>7. What the app does <em>not</em> do</h2>
+<h2>5. App lock, biometrics, and secure storage</h2>
+<p>Focus Timer includes an optional app lock. If you turn it on, the app asks your device to verify you with the biometric or device-credential check you already use — fingerprint, face, PIN, pattern, or passcode.</p>
+<p>That check is performed by your operating system, not by us. <strong>The app never sees, receives, or stores your fingerprint, face data, PIN, or passcode.</strong> It receives only a pass-or-fail result from the OS, and there is no biometric template anywhere in the app or in any transmission it makes.</p>
+<p>Settings that should not sit in plain storage — the app-lock preference and the Pro entitlement state — are held with the platform's encrypted secret storage (iOS Keychain, Android Keystore). Everything in this section stays on the device.</p>
+
+<h2>6. Notifications, reviews, and links</h2>
 <ul>
-  <li>No accounts, no sign-up, no password, no email collection inside the app.</li>
-  <li>No contacts, photos, calendar, microphone, or camera access.</li>
-  <li>No location permission request.</li>
-  <li>No sending of your notes, session data, or any content to AI services — the app has no AI features enabled.</li>
-  <li>No selling of personal information for money.</li>
+  <li><strong>Notifications and permissions.</strong> The app asks for a permission only when a feature you use needs one — for example notification permission for timer alerts. If you decline, that feature is skipped and nothing is collected in its place.</li>
+  <li><strong>Rating prompt.</strong> The app can show your store's built-in in-app review prompt. The review sheet is provided and handled by Google or Apple; we do not see whether you rated, what you wrote, or that the prompt appeared.</li>
+  <li><strong>Outbound links.</strong> Tapping a link — this policy, the Terms, a support email — hands off to your browser or mail app. Once you leave the app, that destination's own policy applies.</li>
+  <li><strong>App version information.</strong> The app reads its own version and build number locally, to display it in settings and to help with support emails you choose to send us.</li>
 </ul>
+
+<h2>7. Children</h2>
+<p>Focus Timer is not directed at children and is not intended for use by children under 13 (or the equivalent minimum age where you live). We do not knowingly collect data from them, and the app is not configured as a child-directed service for advertising purposes. If you believe a child has used the app in a way that concerns you, email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a> and we will help — though, as the app holds no account and no server-side records, in practice clearing app storage or uninstalling removes everything that exists.</p>
 
 <h2>8. Your choices and controls</h2>
-<h3>Limit or reset the advertising identifier</h3>
 <ul>
-  <li><strong>Android:</strong> <em>Settings → Privacy → Ads</em>, where you can delete or reset the advertising ID. Deleting it stops apps from receiving it.</li>
-  <li><strong>iOS:</strong> <em>Settings → Privacy &amp; Security → Tracking</em>, and turn off tracking for Focus Timer or for all apps.</li>
+  <li><strong>Reset or delete the advertising ID.</strong> On Android: Settings → Google → Ads → <em>Reset advertising ID</em> or <em>Delete advertising ID</em>. On iOS: Settings → Privacy &amp; Security → Tracking, and Settings → Privacy &amp; Security → Apple Advertising.</li>
+  <li><strong>Refuse app tracking (iOS).</strong> The app asks for App Tracking Transparency permission before any IDFA is read. Saying no means the IDFA is not read; ads still appear, but non-personalised. You can change the answer later in Settings → Privacy &amp; Security → Tracking.</li>
+  <li><strong>Consent (EEA, UK, Switzerland).</strong> Where consent is required, a consent prompt appears before advertising identifiers are collected, and your choices are passed to the ad networks. You can reopen and change those choices from the app's privacy settings.</li>
+  <li><strong>Remove ads entirely.</strong> Subscribing to Pro turns the advertising SDK off, as described in section 3.</li>
+  <li><strong>Turn off the app lock.</strong> The app-lock toggle is in the app's settings, and turning it off deletes the stored preference.</li>
+  <li><strong>Delete everything.</strong> Clear the app's storage in your device settings, or uninstall the app.</li>
 </ul>
-<h3>Delete your data</h3>
-<p>Clear the app's storage or uninstall the app. That removes everything the app stores locally. For identifiers already collected by ad partners, reset your advertising ID as above and, if you want, contact the relevant ad network directly.</p>
-<h3>Withdraw ad consent (EEA/UK/Switzerland)</h3>
-<p>Reopen the consent screen from the app's privacy or settings screen and change your answer.</p>
 
-<h2>9. Your rights under GDPR</h2>
-<p>If you are in the EEA, UK, or Switzerland, you have the right to access, correct, delete, restrict, or object to processing of your personal data, the right to data portability, and the right to withdraw consent at any time without affecting processing that already happened. You also have the right to complain to your national data protection authority.</p>
-<p>Practical note, so you know what to expect: because the app has no accounts and stores nothing about you on our side, we usually cannot look you up. If you email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a> with a request, we will respond within 30 days and either action it or explain honestly that the data in question is on your device (where you control it) or held by an ad partner (whom we will identify so you can approach them directly).</p>
-<p>Legal bases used: <em>consent</em> for personalised advertising and advertising identifiers where consent is required; <em>legitimate interests</em> for fraud prevention, crash diagnostics, and keeping the app functioning; <em>contract</em> for delivering a subscription you have purchased.</p>
+<h2>9. Your rights</h2>
+<p>Depending on where you live, you may have rights to access, correct, delete, or port your personal data, to object to or restrict certain processing, and to opt out of "sale" or "sharing" of personal information or of targeted advertising. Email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a> to exercise any of them and we will respond within the period the applicable law requires.</p>
+<p>Two honest caveats. First, we hold no account and no server-side profile, so for most requests the only data that exists is on your device and under your control. Second, sharing advertising identifiers with ad networks for personalised advertising counts as "sharing" for targeted advertising under laws such as the California Consumer Privacy Act; the way to opt out of it in this app is to withhold the tracking or consent permission, reset your advertising ID, or subscribe to Pro. Where we rely on a legal basis under the UK/EU GDPR, it is your consent for advertising identifiers, and our legitimate interest in a working, secure app for on-device functionality and diagnostics.</p>
 
-<h2>10. Your rights under CCPA/CPRA (California) and similar US state laws</h2>
-<p>We do not sell personal information for money. However, sharing device and advertising identifiers with ad networks for personalised advertising counts as <strong>"sharing" for cross-context behavioural advertising</strong> under California law, and as "targeted advertising" under several other US state privacy laws. You have the right to opt out of that.</p>
-<p>To opt out: reset or delete your advertising ID (Android), turn off tracking for this app (iOS), or email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a> with "Opt out of sharing" in the subject line. The app also honours Global Privacy Control signals where the advertising SDKs support them.</p>
-<p>The categories involved are <em>identifiers</em> (advertising and device IDs) and <em>internet or other electronic network activity</em> (ad interactions, diagnostics). We do not collect sensitive personal information. We will not discriminate against you for exercising any of these rights.</p>
+<h2>10. Retention and security</h2>
+<p>We keep nothing on our own servers, because there are none in this app's path. On-device data lasts until you clear it or uninstall. Data collected by the ad SDKs and by the app stores is retained by those companies under their own schedules, which we neither set nor control. Within the app, secrets are held in the platform keystore and network calls made by the SDKs use encrypted connections; no method of transmission or storage is perfectly secure, and we do not claim otherwise.</p>
 
-<h2>11. Children</h2>
-<p>Focus Timer is intended for students of secondary-school age and above and is not directed to children under 13 (or under 16 where local law sets that age). The app is not configured as a child-directed service, and its ads are not child-directed. We do not knowingly collect personal information from children under those ages. If you are a parent or guardian and believe your child has used the app, email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a> and we will help you clear the data and advise on resetting the advertising identifier.</p>
+<h2>11. Changes to this policy</h2>
+<p>If the app's data practices change, this policy is updated and the effective date at the top changes with it. Material changes will also be surfaced in the app. This version replaces the version dated 31 July 2026; the substantive additions are the Pro subscription (section 4) and the optional app lock and secure storage (section 5).</p>
 
-<h2>12. Data retention</h2>
-<p>Local data stays on your device until you delete it or uninstall the app. Data held by ad networks and the app stores is retained under their own schedules, which we do not control. We hold no personal data on our own servers, so there is nothing on our side to retain or delete.</p>
+<h2>12. Contact</h2>
+<p>Questions, requests, or corrections: <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>. One person reads that inbox, so please give the app name and, if it helps, your device and OS version.</p>
 
-<h2>13. International transfers</h2>
-<p>The advertising and store partners are global companies and may process data in countries outside your own, including the United States. Where required, they rely on approved transfer mechanisms such as the EU Standard Contractual Clauses.</p>
-
-<h2>14. Security</h2>
-<p>Data on your device is protected by your device's own security — screen lock, OS sandboxing, and storage encryption. Network calls made by the app and its SDKs use encrypted HTTPS connections. No system is perfectly secure, but because the app holds no account credentials and no payment data, the exposure from any single device is limited to your own timer settings and streak history.</p>
-
-<h2>15. Changes to this policy</h2>
-<p>If this policy changes in a way that affects what is collected or who it is shared with, the effective date at the top will change and the updated policy will be published here before the change takes effect in the app. Material changes affecting advertising consent will also re-prompt you inside the app where the law requires it.</p>
-
-<h2>16. Contact</h2>
-<p>Questions, requests, or complaints: <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>. Please include the app name (Focus Timer) and your platform (Android or iOS) so we can answer accurately.</p>
-
-<footer>Focus Timer — <code>com.devvratkalia.focustimer</code> — published by Dev_K. Effective 31 July 2026.</footer>
+<footer>
+Focus Timer (<code>com.devvratkalia.focustimer</code>) — published by Dev_K. Effective 9 August 2026.
+</footer>
 
 </main>
-</body>
+<!-- admin-reviewed --></body>
 </html>
