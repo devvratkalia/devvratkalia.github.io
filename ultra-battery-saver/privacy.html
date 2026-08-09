@@ -1,0 +1,234 @@
+I need to flag something before I hand you these documents.
+
+The app concept includes one element I won't reproduce: covertly uploading a user's real location in the background "as a spy app," while obtaining the location permission by telling the user it's only for "compass calibration and GPS calibration." That's deceptive-consent surveillance (stalkerware behaviour), and I won't write legal copy that disguises covert tracking as calibration.
+
+Two things make the honest version straightforward, though: your own **GROUND TRUTH data-safety matrix does not list background location as collected or uploaded** (the location rows are unchecked/"only if you enable it"), and I'm told not to contradict or invent beyond that ground truth. So the documents below describe location honestly — used on-device for the compass and offline navigation, not uploaded or used for tracking — which matches your declared data practices and is safe to publish. Everything else (Unity LevelPlay/Unity Ads identifiers, pro_monthly/pro_yearly subscriptions, no accounts) is reflected faithfully.
+
+If the app genuinely does transmit location, that has to be disclosed prominently as tracking with real, informed consent — not framed as calibration — and I'm glad to write that transparent version instead. Here are the honest documents:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Navigator + Ultra Battery Saver</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 18px 64px; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 32px 0 8px; }
+  h3 { font-size: 1.02rem; margin: 20px 0 6px; }
+  p, li { font-size: 1rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 4px 0; }
+  a { color: #0a63c9; word-break: break-word; }
+  .meta { color: #555; font-size: 0.92rem; margin: 0 0 20px; }
+  .card {
+    border: 1px solid #e3e3e3; border-radius: 12px;
+    padding: 14px 16px; margin: 16px 0; background: #fafafa;
+  }
+  .callout {
+    border-left: 4px solid #0a63c9; background: #eef4fd;
+    padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 16px 0;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.94rem; }
+  th, td { text-align: left; padding: 8px 10px; border: 1px solid #e3e3e3; vertical-align: top; }
+  th { background: #f0f0f0; }
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  code { background: #f0f0f0; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e3e3e3; color: #555; font-size: 0.9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #121212; }
+    a { color: #7db6ff; }
+    .meta, footer { color: #aaa; }
+    .card { background: #1c1c1c; border-color: #333; }
+    .callout { background: #16273d; border-left-color: #7db6ff; }
+    th { background: #242424; }
+    th, td { border-color: #333; }
+    code { background: #242424; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">
+    <strong>Navigator + Ultra Battery Saver</strong><br>
+    Publisher: Dev_K &middot; Package: <code>com.devvratkalia.navigatorplusbatterysaver</code><br>
+    Effective date: 9 August 2026
+  </p>
+
+  <p>This Privacy Policy explains what information the Navigator + Ultra Battery Saver app
+  (the “App”) collects, why, who it is shared with, and the choices you have. We’ve written it
+  in plain English. If anything is unclear, contact us at
+  <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>.</p>
+
+  <div class="callout">
+    <strong>The short version:</strong> The App does not require an account. Your location is used
+    on your device to power the compass and offline navigation — it is <strong>not</strong> uploaded
+    to us or used to track you. The App shows ads through Unity LevelPlay, which collects advertising
+    identifiers and device information. If you buy a Pro subscription, the app store handles the payment,
+    not us.
+  </div>
+
+  <h2>1. What the App does</h2>
+  <ul>
+    <li><strong>Battery saving:</strong> lists your installed apps, lets you mark the ones that
+      matter to you, and stops the ones you didn’t select so they stop draining the battery.</li>
+    <li><strong>Compass &amp; GPS navigation:</strong> provides a compass and turn-by-turn style
+      navigation using your device’s sensors and location.</li>
+    <li><strong>Offline maps:</strong> lets you download maps from open-source map providers
+      (such as OpenStreetMap-based data) for use without a network connection.</li>
+    <li><strong>Offline navigation:</strong> route and navigate using those downloaded maps
+      without an internet connection.</li>
+  </ul>
+
+  <h2>2. Location</h2>
+  <p>The App asks for location permission so it can provide the compass and GPS navigation features
+  you use. Here is exactly how location is handled:</p>
+  <ul>
+    <li>Location is read on your device to show your position, orient the compass, and calculate
+      routes.</li>
+    <li>We <strong>do not upload your location to our servers</strong>, and we do not use it to
+      track you or build a profile about your movements.</li>
+    <li>We <strong>do not sell or share your location</strong> with data brokers.</li>
+    <li>You can turn location permission off at any time in your device settings. Navigation and
+      compass features will stop working until you turn it back on.</li>
+  </ul>
+  <p>If a future version of the App ever transmits your location off the device, we will update this
+  policy, clearly disclose it before it happens, and ask for your explicit consent.</p>
+
+  <h2>3. Advertising — Unity LevelPlay &amp; Unity Ads</h2>
+  <p>The App is supported by ads served through <strong>Unity LevelPlay mediation</strong> with the
+  <strong>Unity Ads</strong> adapter (banner, interstitial, and rewarded formats). To show and
+  measure ads, these services collect the following whether or not you interact with an ad:</p>
+
+  <div class="tbl-scroll">
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Purpose</th><th>Shared with</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Advertising ID (Android GAID / Apple IDFA)</td>
+        <td>Advertising, measurement, fraud prevention</td>
+        <td>Mediated ad networks</td>
+      </tr>
+      <tr>
+        <td>Vendor / app-set ID</td>
+        <td>Advertising, fraud prevention</td>
+        <td>Mediated ad networks</td>
+      </tr>
+      <tr>
+        <td>Coarse device info (model, OS version, language, network type)</td>
+        <td>Advertising, analytics</td>
+        <td>Mediated ad networks</td>
+      </tr>
+      <tr>
+        <td>Ad interactions (impressions, clicks)</td>
+        <td>Advertising, analytics</td>
+        <td>Mediated ad networks</td>
+      </tr>
+      <tr>
+        <td>Diagnostics &amp; crash logs</td>
+        <td>Stability, app functionality, analytics</td>
+        <td>SDK vendor</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Some of this data is used to <strong>track</strong> you across apps and services for advertising.
+  Learn more in
+  <a href="https://unity.com/legal/privacy-policy" rel="nofollow noopener" target="_blank">Unity’s Privacy Policy</a>.</p>
+
+  <h3>Your ad choices</h3>
+  <ul>
+    <li><strong>iOS:</strong> The App asks for App Tracking Transparency permission before reading
+      your IDFA. If you decline, your IDFA is not used for tracking.</li>
+    <li><strong>Android:</strong> You can reset or delete your advertising ID in
+      <em>Settings → Privacy → Ads</em>, and opt out of ad personalisation there.</li>
+    <li><strong>EEA/UK:</strong> Identifiers are only collected after you give consent through the
+      in-app consent prompt. You can change your choice at any time.</li>
+  </ul>
+
+  <h2>4. Pro subscriptions</h2>
+  <p>The App offers optional Pro subscriptions (<code>pro_monthly</code> and <code>pro_yearly</code>).
+  Purchases are processed by <strong>Google Play Billing</strong> or the <strong>Apple App Store</strong>.
+  We never see or store your card number or full payment details — the app store handles the transaction
+  and tells us only whether you have an active entitlement. Please review the
+  <a href="https://policies.google.com/privacy" rel="nofollow noopener" target="_blank">Google</a> and
+  <a href="https://www.apple.com/legal/privacy/" rel="nofollow noopener" target="_blank">Apple</a>
+  privacy policies for how they process payments.</p>
+
+  <h2>5. Accounts</h2>
+  <p>The App does <strong>not</strong> create user accounts and does not ask for your name, email,
+  phone number, or contacts to use its features.</p>
+
+  <h2>6. Who your data is shared with</h2>
+  <ul>
+    <li><strong>Ad networks</strong> mediated by Unity LevelPlay (see Section 3).</li>
+    <li><strong>App stores</strong> (Google, Apple) for subscription billing.</li>
+    <li><strong>Open-source map providers</strong> when you download map data (your IP address is
+      visible to the map tile server during the download, as with any web request).</li>
+  </ul>
+  <p>We do not sell your personal information for money.</p>
+
+  <h2>7. Data retention</h2>
+  <p>Your app selections, downloaded maps, and preferences stay on your device and are removed when
+  you uninstall the App. Advertising and diagnostics data are retained by the relevant third parties
+  according to their own policies.</p>
+
+  <h2>8. Children</h2>
+  <p>The App is not directed to children under 13 (or the minimum age in your country). We do not
+  knowingly collect personal information from children. If you believe a child has provided data,
+  contact us and we will address it.</p>
+
+  <h2>9. Your rights (GDPR / UK GDPR / CCPA and similar laws)</h2>
+  <p>Depending on where you live, you may have the right to:</p>
+  <ul>
+    <li>Access the personal data held about you and ask for a copy.</li>
+    <li>Ask for correction or deletion of your data.</li>
+    <li>Object to or restrict certain processing, including targeted advertising.</li>
+    <li>Withdraw consent for identifier collection (via the ad choices in Section 3).</li>
+    <li>Opt out of the “sale” or “sharing” of personal information (California residents) —
+      you can do this by resetting/limiting your advertising ID and declining tracking.</li>
+  </ul>
+  <p>To exercise any of these rights, email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>.
+  Because the App has no accounts, we may ask you for information (such as your advertising ID) to
+  locate any data associated with your device. We will not discriminate against you for exercising
+  your rights.</p>
+
+  <h2>10. Security</h2>
+  <p>We rely on the security controls of your device’s operating system and the app stores. No method
+  of transmission or storage is completely secure, but we take reasonable measures to protect the
+  limited data involved.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We may update this policy from time to time. When we do, we will change the “Effective date”
+  above and, for significant changes, provide notice in the App. Continued use after an update means
+  you accept the revised policy.</p>
+
+  <h2>12. Contact</h2>
+  <p>Questions or requests about your privacy? Email
+  <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>.</p>
+
+  <footer>
+    © 2026 Dev_K. Navigator + Ultra Battery Saver. All rights reserved.
+  </footer>
+
+</div>
+</body>
+</html>
+```
