@@ -26,7 +26,7 @@
         h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #000; }
         h2 { font-size: 1.5rem; margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         p { margin-bottom: 1.2rem; }
-        
+
         .last-updated {
             color: var(--text-muted);
             font-size: 0.9rem;
@@ -39,6 +39,10 @@
             border-radius: 8px;
             margin: 20px 0;
         }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        th, td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid #eee; }
+        th { background: var(--section-bg); }
 
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
@@ -60,52 +64,123 @@
 
     <header>
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: April 21, 2026</p>
+        <p class="last-updated">Last Updated: October 2, 2026</p>
     </header>
 
     <section>
-        <p><strong>RF Fresnel Calculator</strong> (the "App") is committed to protecting your privacy. This policy explains how we handle information when you use our mobile application.</p>
-    </section>
-
-    <section>
-        <h2>1. Information Collection and Use</h2>
-        <p>For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.</p>
-        
+        <p><strong>RF Fresnel Calculator</strong> (the "App") is developed by Dev_K ("we", "us"). This policy explains what information the App uses, where it goes, and the choices you have. It applies to the App on Android and iOS.</p>
         <div class="card">
-            <strong>Device Identifiers (Data Safety Compliance)</strong><br>
-            The App uses third-party services that may collect information used to identify you. This includes <strong>Device or other IDs</strong> (such as Advertising ID, Android ID, or IMEI) primarily for the purpose of analytics and ad delivery.
+            <strong>In short:</strong> the App has no user accounts and we do not run any server that receives your data. Your links, reports, files and settings stay on your device. To work, the App sends map coordinates and search text to map and terrain services, and the free version shows ads from Unity LevelPlay, which collects device and advertising information as described below.
         </div>
     </section>
 
     <section>
-        <h2>2. Third-Party Services</h2>
-        <p>The App does use third-party services that may collect information used to identify you. Link to the privacy policy of third-party service providers used by the app:</p>
+        <h2>1. Information the App uses</h2>
+        <table>
+            <tr>
+                <th>Information</th>
+                <th>Why it is used</th>
+                <th>Where it goes</th>
+            </tr>
+            <tr>
+                <td><strong>Precise location</strong> (only if you allow it, and only while the App is open)</td>
+                <td>To centre the map on where you are and to use your position as a site.</td>
+                <td>Used on your device. If you use your position as a site, its coordinates are sent to the map and terrain services in section 3, like any other point you mark. We do not receive or store it. The App does not use location in the background.</td>
+            </tr>
+            <tr>
+                <td><strong>Map points and coordinates</strong> you mark or enter</td>
+                <td>To work out terrain profiles, Fresnel clearance, coverage and routes.</td>
+                <td>Sent to the elevation, terrain and map services in section 3.</td>
+            </tr>
+            <tr>
+                <td><strong>Place search text</strong></td>
+                <td>To find the place you search for.</td>
+                <td>Sent to Google Places (Android) or Apple Maps (iOS).</td>
+            </tr>
+            <tr>
+                <td><strong>Files you open</strong> (KML, KMZ, GPX) and <strong>reports you save</strong></td>
+                <td>To show your routes and sites, and to save or share reports.</td>
+                <td>Processed and stored on your device only. A report leaves your device only when you choose to share it.</td>
+            </tr>
+            <tr>
+                <td><strong>Settings, history and free-analysis credits</strong></td>
+                <td>To remember your preferences and past work.</td>
+                <td>Stored on your device only.</td>
+            </tr>
+            <tr>
+                <td><strong>Purchases</strong> (Pro and Max subscriptions)</td>
+                <td>To unlock the features you paid for.</td>
+                <td>Handled entirely by Google Play or the Apple App Store. The App only receives whether a subscription is active. We never see your payment details.</td>
+            </tr>
+            <tr>
+                <td><strong>Advertising and device information</strong> (free version only; see section 2)</td>
+                <td>To show ads, measure them and prevent ad fraud.</td>
+                <td>Collected by Unity LevelPlay (Unity Ads).</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>2. Advertising</h2>
+        <p>The free version of the App shows ads, including optional rewarded ads that unlock an analysis. Ads are provided by <strong>Unity LevelPlay</strong> (Unity Technologies). To serve and measure ads and to prevent fraud, Unity may collect:</p>
         <ul>
-            <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-            <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Analytics for Firebase</a></li>
+            <li>Device or other identifiers, such as the Advertising ID (Android), the identifier for advertisers (iOS, only if you allow tracking) and the app set ID;</li>
+            <li>Your IP address and the approximate location derived from it;</li>
+            <li>Device information, such as model, operating system, language and network type;</li>
+            <li>Ad interactions, such as which ads were shown or tapped;</li>
+            <li>Diagnostic information about ad performance and crashes.</li>
         </ul>
+        <p>Unity handles this information under its own privacy policy: <a href="https://unity.com/legal/privacy-policy" target="_blank">Unity Privacy Policy</a>.</p>
+        <div class="card">
+            <strong>Your choices:</strong> a Pro or Max subscription removes ads. On Android you can reset or delete your Advertising ID in Settings → Privacy → Ads (or Google → Ads). On iOS the App asks before allowing tracking, and you can change this in Settings → Privacy &amp; Security → Tracking.
+        </div>
     </section>
 
     <section>
-        <h2>3. Log Data</h2>
-        <p>We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+        <h2>3. Third-party services</h2>
+        <p>The App relies on these services. Each receives only what it needs to answer the App's request, as described above, and handles it under its own policy:</p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank">Google Maps Platform</a>: maps, 3D maps, place search and elevation;</li>
+            <li><a href="https://policies.google.com/privacy" target="_blank">Google Play services and Google Play Billing</a> (Android);</li>
+            <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Maps and the App Store</a> (iOS);</li>
+            <li><a href="https://unity.com/legal/privacy-policy" target="_blank">Unity LevelPlay / Unity Ads</a>: advertising;</li>
+            <li><a href="https://aws.amazon.com/privacy/" target="_blank">Amazon Web Services</a>: Terrain Tiles (elevation data);</li>
+            <li><a href="https://www.opentopodata.org/" target="_blank">Open Topo Data</a>, <a href="https://open-elevation.com/" target="_blank">Open-Elevation</a> and <a href="https://open-meteo.com/en/terms" target="_blank">Open-Meteo</a>: elevation data;</li>
+            <li><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank">OpenStreetMap</a>, OpenTopoMap, Waymarked Trails and OpenSeaMap: optional map layers.</li>
+        </ul>
+        <p>These services, like any server, may see your device's IP address when the App contacts them.</p>
     </section>
 
     <section>
-        <h2>4. Cookies</h2>
-        <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory. This Service does not use these “cookies” explicitly.</p>
+        <h2>4. Data retention and deletion</h2>
+        <p>We do not keep any of your data, because none of it is sent to us. Everything the App stores (settings, history, files and reports) stays on your device. Uninstalling the App deletes it, as does clearing the App's data in your device settings.</p>
+        <p>Information collected by Unity for advertising is kept and deleted under Unity's policy. You can make requests about it through Unity's privacy page linked above. You can also contact us at the address below and we will help.</p>
     </section>
 
     <section>
         <h2>5. Security</h2>
-        <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+        <p>All connections the App makes to the services above use encryption in transit (HTTPS). No method of transmission or storage is completely secure, but we use the protections the platforms provide.</p>
     </section>
 
     <section>
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
-        <p><strong>Email:</strong>wekstuff@gmail.com</p>
+        <h2>6. Children</h2>
+        <p>The App is a professional radio-planning tool and is not directed at children under 13. We do not knowingly collect information from children. If you believe a child has used the App and information has been collected by an ad provider, contact us and we will help to have it removed.</p>
+    </section>
+
+    <section>
+        <h2>7. Your rights</h2>
+        <p>Depending on where you live (for example, under the GDPR in the EU/UK or the CCPA in California), you may have rights to access, correct or delete personal information, or to object to its use for advertising. Because we hold no personal information ourselves, these requests are best made to the services listed above. We will gladly help if you contact us. You can withdraw location access at any time in your device settings, and a subscription removes ads entirely.</p>
+    </section>
+
+    <section>
+        <h2>8. Changes to this policy</h2>
+        <p>We may update this policy when the App changes. The date at the top shows the latest version. Significant changes will also be noted in the App's release notes.</p>
+    </section>
+
+    <section>
+        <h2>9. Contact us</h2>
+        <p>If you have any questions about this Privacy Policy, contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a></p>
     </section>
 
     <footer>
