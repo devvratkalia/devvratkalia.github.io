@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RF Fresnel Zone Calculator & Link Budget Planner | Line-of-Sight & 3D Terrain Analysis</title>
+    <meta name="description" content="Master RF line-of-sight link planning. Understand Fresnel zone physics, the 60% clearance rule, earth curvature bulge, and download the RF Fresnel Calculator app for iOS & Android with 3D terrain elevation profiling.">
+    <meta name="keywords" content="fresnel zone calculator, rf fresnel zone, first fresnel zone formula, 60 percent fresnel clearance, microwave link planning, line of sight calculation, earth curvature bulge, wisp link budget, telecom radio planner, ham radio line of sight, 3d elevation profile">
+    <meta name="author" content="Devvrat Kalia">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devvratkalia.github.io/rf-fresnel-calculator/">
+
+    <!-- Apple Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6768409821">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devvratkalia.github.io/rf-fresnel-calculator/">
+    <meta property="og:title" content="RF Fresnel Zone Calculator & Link Budget Planner (iOS & Android)">
+    <meta property="og:description" content="Calculate Fresnel zone radius, 60% clearance line, earth curvature, and full 3D topographic profiles on Google Maps. Available on Google Play & App Store.">
+    <meta property="og:image" content="https://devvratkalia.github.io/rf-fresnel-calculator/og-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://devvratkalia.github.io/rf-fresnel-calculator/">
+    <meta name="twitter:title" content="RF Fresnel Zone Calculator & Link Budget Planner">
+    <meta name="twitter:description" content="Understand Fresnel zones, 60% clearance rule, and plan microwave links with high-resolution DEM elevation on iOS and Android.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data: SoftwareApplication + FAQPage + Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://devvratkalia.github.io/rf-fresnel-calculator/#app",
+          "name": "RF Fresnel Calculator",
+          "operatingSystem": "Android, iOS",
+          "applicationCategory": "UtilitiesApplication",
+          "author": {
+            "@type": "Person",
+            "name": "Devvrat Kalia"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Professional RF Fresnel Zone calculator and link budget planner with Google Maps GIS, topographic elevation profiling, earth curvature compensation, and KMZ 3D export.",
+          "installUrl": [
+            "https://play.google.com/store/apps/details?id=com.devvratkalia.rffresnelcalculator",
+            "https://apps.apple.com/app/rf-fresnel-calculator/id6768409821"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Dev Studios",
+              "item": "https://devvratkalia.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "RF Fresnel Calculator",
+              "item": "https://devvratkalia.github.io/rf-fresnel-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a Fresnel Zone in radio frequency propagation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Fresnel zone is a series of concentric prolate ellipsoidal regions of space surrounding the direct line-of-sight path between a transmitter and a receiver. The first Fresnel zone (F1) contains the majority of the transmitted radio energy. Obstructions inside this zone cause out-of-phase reflections that result in severe destructive interference and signal fading."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is 60% Fresnel Zone clearance required for reliable radio links?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Radio propagation theory and empirical measurements establish that keeping at least 60% of the first Fresnel zone (0.6 F1) free of any physical obstructions results in virtually zero diffraction loss (equivalent to free-space path loss). If clearance drops below 60%, knife-edge diffraction attenuation rapidly increases, causing link degradation or total signal loss."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Earth curvature affect microwave line-of-sight links?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Because the Earth is spherical, the terrain between two towers bulges upward along the path. For radio links longer than 5 km (3 miles), this earth bulge significantly encroaches into the lower Fresnel zone. Standard link planning uses a 4/3 equivalent earth radius factor (K = 1.33) to calculate the apparent bulge height and determine necessary tower elevations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What frequencies does the RF Fresnel Calculator mobile app support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The RF Fresnel Calculator app supports all radio frequency bands, from HF, VHF, and UHF up to microwave and millimeter-wave bands including 900 MHz, 2.4 GHz, 5.8 GHz, 10 GHz, 24 GHz, and 60 GHz."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-deep: #090d16;
+            --bg-surface: #101726;
+            --bg-card: rgba(16, 23, 38, 0.8);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-accent: rgba(0, 210, 255, 0.35);
+            
+            --accent-cyan: #00d2ff;
+            --accent-cyan-glow: rgba(0, 210, 255, 0.2);
+            --accent-orange: #ff5e1a;
+            --accent-green: #10b981;
+            
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-full: 9999px;
+            --container-max: 1160px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.65;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(0, 210, 255, 0.09) 0%, transparent 40%),
+                radial-gradient(circle at 90% 25%, rgba(255, 94, 26, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 50% 70%, rgba(99, 102, 241, 0.06) 0%, transparent 55%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Header & Breadcrumb Nav --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(9, 13, 22, 0.85);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .breadcrumb-sep {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-header-store {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            text-decoration: none;
+            padding: 7px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.2s ease;
+        }
+
+        .btn-header-store:hover {
+            background: var(--accent-cyan);
+            color: #000;
+            border-color: var(--accent-cyan);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: clamp(3.5rem, 7vw, 6rem) 1.5rem clamp(2.5rem, 5vw, 4rem);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: var(--accent-cyan);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 5.5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.2px;
+            max-width: 980px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero h1 span.highlight {
+            color: var(--accent-cyan);
+            background: linear-gradient(135deg, #00d2ff, #70e1ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-lead {
+            font-size: clamp(1.1rem, 2vw, 1.28rem);
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* --- Store Download Badges --- */
+        .cta-store-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 2.5rem;
+        }
+
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .store-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .store-btn svg {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .store-btn-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .store-btn-text span.small {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #9ca3af;
+            line-height: 1;
+        }
+
+        .store-btn-text span.big {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            letter-spacing: -0.3px;
+        }
+
+        .meta-strip {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .meta-strip span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* --- Content Container --- */
+        .content-section {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-tag {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-orange);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- Fresnel Zone Theory & Basics Cards --- */
+        .theory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.75rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .theory-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            position: relative;
+            transition: border-color 0.2s ease;
+        }
+
+        .theory-card:hover {
+            border-color: var(--border-accent);
+        }
+
+        .theory-num {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .theory-card h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.4px;
+            color: #fff;
+        }
+
+        .theory-card p {
+            color: #d1d5db;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Formula Showcase Box --- */
+        .formula-container {
+            background: linear-gradient(145deg, rgba(16, 23, 38, 0.95), rgba(20, 30, 50, 0.95));
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-lg);
+            padding: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .formula-header {
+            margin-bottom: 2rem;
+        }
+
+        .formula-header h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .formula-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .formula-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        .formula-box-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+        }
+
+        .math-display {
+            font-family: var(--font-mono);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            font-weight: 700;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-left: 3px solid var(--accent-cyan);
+        }
+
+        .formula-vars {
+            list-style: none;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .formula-vars code {
+            font-family: var(--font-mono);
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+
+        /* --- Clearance Rules Deep Dive --- */
+        .clearance-breakdown {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 860px) {
+            .clearance-breakdown {
+                grid-template-columns: 1.1fr 0.9fr;
+                align-items: center;
+            }
+        }
+
+        .clearance-info h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .clearance-info p {
+            color: #d1d5db;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .rule-card {
+            background: rgba(255, 94, 26, 0.08);
+            border: 1px solid rgba(255, 94, 26, 0.3);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .rule-card h4 {
+            color: #ff854d;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .rule-card p {
+            font-size: 0.92rem;
+            margin-bottom: 0;
+            color: #e5e7eb;
+        }
+
+        .svg-diagram-card {
+            background: rgba(10, 15, 26, 0.95);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .svg-diagram-card svg {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+        }
+
+        .diagram-caption {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+        }
+
+        /* --- App Features Showcase --- */
+        .app-features-section {
+            background: rgba(16, 23, 38, 0.6);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 5rem 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 210, 255, 0.3);
+        }
+
+        .feature-icon-box {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* --- FAQ Accordion (<details name="rf-faq">) --- */
+        .faq-container {
+            max-width: 860px;
+            margin: 0 auto 5rem;
+        }
+
+        details.faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        details.faq-item[open] {
+            border-color: var(--border-accent);
+            background: rgba(16, 23, 38, 0.95);
+        }
+
+        summary.faq-question {
+            padding: 1.25rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            color: #fff;
+        }
+
+        summary.faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.faq-question::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+            transition: transform 0.2s;
+        }
+
+        details[open] summary.faq-question::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.25rem;
+            color: #d1d5db;
+            font-size: 0.96rem;
+            line-height: 1.65;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        /* --- Bottom Conversion Banner --- */
+        .bottom-banner {
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            border-radius: var(--radius-lg);
+            padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+            text-align: center;
+            max-width: var(--container-max);
+            margin: 0 auto 5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 210, 255, 0.1);
+        }
+
+        .bottom-banner h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .bottom-banner p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: auto;
+            background: #060910;
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 1.5rem 2rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .footer-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="header-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../" id="nav-home">Dev Studios</a>
+                <span class="breadcrumb-sep">/</span>
+                <span style="color: var(--text-primary); font-weight: 700;">RF Fresnel Calculator</span>
+            </nav>
+            <div class="header-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.devvratkalia.rffresnelcalculator" target="_blank" rel="noopener" class="btn-header-store" id="btn-header-play">
+                    Google Play
+                </a>
+                <a href="https://apps.apple.com/app/rf-fresnel-calculator/id6768409821" target="_blank" rel="noopener" class="btn-header-store" id="btn-header-apple">
+                    App Store
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-badge">
+                RF Engineering &bull; Link Budget &bull; Line-of-Sight
+            </div>
+            <h1>
+                Master Radio Line of Sight with <span class="highlight">RF Fresnel Calculator</span>
+            </h1>
+            <p class="hero-lead">
+                Plan reliable microwave, WISP, WiFi, and ham radio links. Understand 1st Fresnel zone clearance, earth curvature bulge, and visualize 3D topographic terrain directly on mobile devices.
+            </p>
+
+            <!-- Official Store Badges -->
+            <div class="cta-store-group">
+                <!-- Google Play -->
+                <a href="https://play.google.com/store/apps/details?id=com.devvratkalia.rffresnelcalculator" target="_blank" rel="noopener" class="store-btn" id="btn-hero-playstore">
+                    <svg viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" fill="#00d2ff"/>
+                    </svg>
+                    <div class="store-btn-text">
+                        <span class="small">GET IT ON</span>
+                        <span class="big">Google Play</span>
+                    </div>
+                </a>
+
+                <!-- Apple App Store -->
+                <a href="https://apps.apple.com/app/rf-fresnel-calculator/id6768409821" target="_blank" rel="noopener" class="store-btn" id="btn-hero-appstore">
+                    <svg viewBox="0 0 170 170" fill="currentColor">
+                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.3-9.5-11.25-20.2-14.85-32.09-3.6-11.9-5.4-23.23-5.4-34.01 0-14.78 3.73-27.23 11.2-37.34 7.47-10.12 17.07-15.34 28.8-15.66 4.36 0 9.28 1.15 14.75 3.44 5.47 2.29 9.38 3.49 11.73 3.59 2.13 0 6.27-1.25 12.43-3.76 6.16-2.5 11.45-3.6 15.86-3.3 11.53.64 20.89 4.88 28.09 12.72-9.98 6.07-14.86 14.44-14.65 25.1.22 8.4 3.46 15.35 9.72 20.85 6.26 5.51 13.62 8.7 22.09 9.58-2.35 7.15-5.24 14.54-8.67 22.18zM119.22 31.84c0-7.05 2.56-13.78 7.68-20.2 5.12-6.41 11.66-10.66 19.63-12.74-.22 1.94-.48 3.72-.79 5.34-.85 4.9-2.73 9.7-5.63 14.39-2.9 4.7-6.55 8.27-10.95 10.72-4.4 2.44-8.5 3.82-12.3 4.14-.11-.53-.16-1.08-.16-1.65h.52z"/>
+                    </svg>
+                    <div class="store-btn-text">
+                        <span class="small">DOWNLOAD ON</span>
+                        <span class="big">App Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="meta-strip">
+                <span>✓ Android 8.0+ &amp; iOS 14.0+</span>
+                <span>✓ Google Maps GIS Integration</span>
+                <span>✓ Open-Meteo &amp; Mapzen DEM</span>
+                <span>✓ KMZ 3D Export</span>
+            </div>
+        </section>
+
+        <!-- The Fundamentals of RF Fresnel Zones -->
+        <section class="content-section" id="basics">
+            <div class="section-header">
+                <span class="section-tag">Radio Science &bull; Fundamentals</span>
+                <h2>Understanding Fresnel Zones &amp; Line of Sight</h2>
+                <p>
+                    Why an optical line of sight is not enough. The physics of electromagnetic wavefront propagation, boundary ellipsoids, and obstacle clearance.
+                </p>
+            </div>
+
+            <div class="theory-grid">
+                <!-- Concept 1 -->
+                <div class="theory-card">
+                    <span class="theory-num">SECTION 01</span>
+                    <h3>What is a Fresnel Zone?</h3>
+                    <p>
+                        In radio frequency propagation, radio waves do not travel as an infinitely thin laser beam between two antennas. Instead, electromagnetic energy spreads outwards into a series of concentric, prolate ellipsoidal regions surrounding the visual Line of Sight (LOS).
+                    </p>
+                    <p>
+                        These ellipsoidal zones are named after French physicist <strong>Augustin-Jean Fresnel</strong>. The <strong>First Fresnel Zone (F1)</strong> is the innermost ellipse and contains the primary portion of the transmitted radio energy.
+                    </p>
+                </div>
+
+                <!-- Concept 2 -->
+                <div class="theory-card">
+                    <span class="theory-num">SECTION 02</span>
+                    <h3>Phase Cancellation &amp; Interference</h3>
+                    <p>
+                        When a radio signal reflects off an obstacle (such as a hilltop, tree canopy, or roof), the reflected wave travels a longer path than the direct wave.
+                    </p>
+                    <p>
+                        The boundary of the 1st Fresnel zone corresponds to a path difference of <strong>&frac12; wavelength (&lambda;/2)</strong>, which causes a <strong>180&deg; phase shift</strong>. If obstacles penetrate this zone, the reflected waves arrive out-of-phase, causing destructive cancellation and severe signal attenuation.
+                    </p>
+                </div>
+
+                <!-- Concept 3 -->
+                <div class="theory-card">
+                    <span class="theory-num">SECTION 03</span>
+                    <h3>The 60% Clearance Rule</h3>
+                    <p>
+                        Telecom engineering standard practice requires keeping at least <strong>60% of the First Fresnel Zone radius (0.6 F1)</strong> completely free of any physical obstructions.
+                    </p>
+                    <p>
+                        At 60% clearance, the link achieves propagation conditions virtually identical to free-space path loss (0 dB diffraction penalty). If clearance drops below 60%, knife-edge diffraction loss increases rapidly from 6 dB to over 20 dB, causing packet drop or complete link failure.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SVG Visual Diagram of Fresnel Ellipse & 60% Clearance Line -->
+            <div class="svg-diagram-card">
+                <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradLOS" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#ff5e1a"/>
+                            <stop offset="100%" stop-color="#00d2ff"/>
+                        </linearGradient>
+                        <radialGradient id="fresnelGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="rgba(0, 210, 255, 0.25)"/>
+                            <stop offset="70%" stop-color="rgba(0, 210, 255, 0.08)"/>
+                            <stop offset="100%" stop-color="rgba(0, 210, 255, 0)"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Background Grid -->
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    </pattern>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+
+                    <!-- Earth Curvature Arc -->
+                    <path d="M 50 280 Q 450 250 850 280" fill="none" stroke="rgba(255, 94, 26, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+                    <text x="450" y="272" fill="#ff854d" font-size="12" text-anchor="middle" font-family="'JetBrains Mono', monospace">Earth Curvature Bulge (K = 4/3)</text>
+
+                    <!-- Obstacle / Hill -->
+                    <path d="M 400 280 Q 450 200 500 280 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                    <text x="450" y="225" fill="#f3f4f6" font-size="12" text-anchor="middle" font-weight="bold">Terrain Obstacle</text>
+
+                    <!-- Outer 1st Fresnel Ellipse -->
+                    <ellipse cx="450" cy="140" rx="380" ry="100" fill="url(#fresnelGlow)" stroke="#00d2ff" stroke-width="2"/>
+                    <text x="750" y="80" fill="#00d2ff" font-size="12" font-family="'JetBrains Mono', monospace">100% 1st Fresnel Zone (F1)</text>
+
+                    <!-- 60% Inner Clearance Threshold -->
+                    <ellipse cx="450" cy="140" rx="380" ry="60" fill="none" stroke="#eab308" stroke-width="1.8" stroke-dasharray="6,4"/>
+                    <text x="750" y="105" fill="#eab308" font-size="12" font-family="'JetBrains Mono', monospace">60% F1 Clearance Limit</text>
+
+                    <!-- Direct Line of Sight (LOS) Axis -->
+                    <line x1="80" y1="140" x2="820" y2="140" stroke="url(#gradLOS)" stroke-width="3"/>
+                    <text x="450" y="132" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle">Direct Line of Sight (LOS)</text>
+
+                    <!-- Antenna Tower Left (Tx) -->
+                    <line x1="80" y1="280" x2="80" y2="140" stroke="#00d2ff" stroke-width="4"/>
+                    <circle cx="80" cy="140" r="6" fill="#00d2ff"/>
+                    <text x="80" y="305" fill="#9ca3af" font-size="12" text-anchor="middle">Tx Tower</text>
+
+                    <!-- Antenna Tower Right (Rx) -->
+                    <line x1="820" y1="280" x2="820" y2="140" stroke="#00d2ff" stroke-width="4"/>
+                    <circle cx="820" cy="140" r="6" fill="#00d2ff"/>
+                    <text x="820" y="305" fill="#9ca3af" font-size="12" text-anchor="middle">Rx Tower</text>
+                </svg>
+                <div class="diagram-caption">
+                    Figure 1: Cross-sectional model of the First Fresnel Zone ($F_1$) showing the direct Line-of-Sight (LOS) axis, the mandatory 60% clearance boundary, and the impact of earth curvature bulge.
+                </div>
+            </div>
+        </section>
+
+        <!-- Mathematical Formulas & Earth Bulge -->
+        <section class="content-section" style="padding-top: 0;">
+            <div class="formula-container">
+                <div class="formula-header">
+                    <span class="section-tag">Engineering Calculations</span>
+                    <h3>The Mathematical Formulas</h3>
+                    <p style="color: #9ca3af;">
+                        Exact formulation used across industry microwave planning tools and implemented inside the RF Fresnel Calculator mobile app:
+                    </p>
+                </div>
+
+                <div class="formula-boxes">
+                    <!-- Metric Formula -->
+                    <div class="formula-box">
+                        <div class="formula-box-label">Metric Units Formula</div>
+                        <div class="math-display">
+                            F₁ = 17.32 × √[ (d₁ · d₂) / (f · D) ]
+                        </div>
+                        <ul class="formula-vars">
+                            <li><code>F₁</code>: 1st Fresnel zone radius in <strong>meters (m)</strong></li>
+                            <li><code>d₁</code>: Distance from transmitter to obstacle (km)</li>
+                            <li><code>d₂</code>: Distance from obstacle to receiver (km)</li>
+                            <li><code>D</code>: Total link distance (km) &bull; <code>D = d₁ + d₂</code></li>
+                            <li><code>f</code>: Operating frequency in <strong>Gigahertz (GHz)</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Imperial Formula -->
+                    <div class="formula-box">
+                        <div class="formula-box-label">Imperial Units Formula</div>
+                        <div class="math-display">
+                            F₁ = 72.05 × √[ (d₁ · d₂) / (f · D) ]
+                        </div>
+                        <ul class="formula-vars">
+                            <li><code>F₁</code>: 1st Fresnel zone radius in <strong>feet (ft)</strong></li>
+                            <li><code>d₁, d₂</code>: Distances in <strong>miles (mi)</strong></li>
+                            <li><code>D</code>: Total link distance in <strong>miles (mi)</strong></li>
+                            <li><code>f</code>: Frequency in <strong>Gigahertz (GHz)</strong></li>
+                            <li><code>60% Limit</code>: Benchmark radius is <code>0.60 × F₁</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Midpoint Formula & Earth Bulge -->
+                <div style="background: rgba(0, 0, 0, 0.3); border-radius: var(--radius-md); padding: 1.5rem; border: 1px solid rgba(255,255,255,0.08);">
+                    <h4 style="color: #fff; margin-bottom: 0.75rem; font-size: 1.15rem;">
+                        Maximum Midpoint Radius &amp; Earth Bulge ($K = 4/3$)
+                    </h4>
+                    <p style="color: #d1d5db; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+                        The Fresnel zone reaches its maximum thickness exactly at the center of the link ($d_1 = d_2 = D/2$). At the midpoint, the metric equation simplifies to:
+                        <code style="color: var(--accent-cyan); font-family: var(--font-mono); font-weight: 700; background: rgba(0,210,255,0.1); padding: 2px 6px; border-radius: 4px;">F₁max = 8.657 × √(D / f)</code>
+                    </p>
+                    <p style="color: #d1d5db; font-size: 0.95rem; line-height: 1.7;">
+                        For long distance links, the spherical surface of the Earth curves upward into the line of sight path. The apparent earth bulge height ($h$) at any point along the link is given by:
+                        <code style="color: #ff854d; font-family: var(--font-mono); font-weight: 700; background: rgba(255,94,26,0.1); padding: 2px 6px; border-radius: 4px;">h = (d₁ · d₂) / (12.74 · K)</code> (where $K = 1.33$ for standard atmospheric refraction).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Clearance Breakdown -->
+            <div class="clearance-breakdown">
+                <div class="clearance-info">
+                    <span class="section-tag">Field Guidelines</span>
+                    <h3>Practical Guidelines for RF Link Installers</h3>
+                    <p>
+                        When establishing a microwave or wireless internet service provider (WISP) link in the field, multiple real-world factors eat into your clearance margin:
+                    </p>
+
+                    <div class="rule-card">
+                        <h4>1. Account for Tree Growth and Seasonal Foliage</h4>
+                        <p>A link installed in winter with bare trees can completely fail in spring when leaves sprout. Pine trees and dense foliage absorb 5 GHz and 60 GHz signals heavily. Always add 3 to 5 meters of safety buffer above tree lines.</p>
+                    </div>
+
+                    <div class="rule-card" style="background: rgba(0, 210, 255, 0.08); border-color: rgba(0, 210, 255, 0.3);">
+                        <h4 style="color: var(--accent-cyan);">2. Compensate for Sub-Refraction (K &lt; 4/3)</h4>
+                        <p>Under humid morning conditions, thermal inversions or temperature ducting can bend RF rays upward away from the Earth, effectively increasing the earth bulge. High-reliability links plan for K = 2/3 (0.67) minimum clearance.</p>
+                    </div>
+                </div>
+
+                <div class="clearance-info">
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.75rem;">
+                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Quick Frequency vs. Zone Size Rule</h4>
+                        <p style="color: #9ca3af; font-size: 0.92rem; margin-bottom: 1rem;">
+                            Higher frequencies have shorter wavelengths, resulting in <strong>narrower</strong> Fresnel zones:
+                        </p>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #e5e7eb; font-family: var(--font-mono);">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-subtle); text-align: left; color: var(--accent-cyan);">
+                                    <th style="padding: 8px 4px;">Frequency</th>
+                                    <th style="padding: 8px 4px;">10 km Midpoint F₁</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 8px 4px;">900 MHz (0.9 GHz)</td>
+                                    <td style="padding: 8px 4px;">28.8 meters</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 8px 4px;">2.4 GHz (WiFi)</td>
+                                    <td style="padding: 8px 4px;">17.7 meters</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 8px 4px;">5.8 GHz (WISP)</td>
+                                    <td style="padding: 8px 4px;">11.4 meters</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 8px 4px;">24 GHz (Microwave)</td>
+                                    <td style="padding: 8px 4px;">5.6 meters</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 4px;">60 GHz (V-Band)</td>
+                                    <td style="padding: 8px 4px;">3.5 meters</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Features Showcase Section -->
+        <section class="app-features-section" id="app-features">
+            <div class="section-header">
+                <span class="section-tag">Mobile Tool Capabilities</span>
+                <h2>How the RF Fresnel Calculator App Solves This</h2>
+                <p>
+                    Rather than manually running formulas, the RF Fresnel Calculator app automates your entire site survey workflow directly from your iPhone, iPad, or Android device.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon-box">🗺️</span>
+                    <h4>Google Maps GIS Integration</h4>
+                    <p>Pin transmitter and receiver tower coordinates directly on interactive Google Maps, search place names, or fly to your live GPS field coordinates.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon-box">⛰️</span>
+                    <h4>High-Resolution Elevation DEM</h4>
+                    <p>Fetches real topographic terrain profiles along the path using Open-Meteo, Open-Elevation, and Mapzen global digital elevation models.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon-box">📐</span>
+                    <h4>Dynamic Tower Height Sliders</h4>
+                    <p>Adjust transmitter and receiver tower heights in real-time. Immediately observe how raising antenna height clears hilltops and vegetation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon-box">🛰️</span>
+                    <h4>3D Terrain &amp; Google Earth KMZ</h4>
+                    <p>Visualize the link in 3D terrain space. Export full KML / KMZ files to open directly in Google Earth for desktop client presentations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon-box">📊</span>
+                    <h4>60% Clearance Line Marker</h4>
+                    <p>Clear visual indicators of the 60% F1 threshold directly overlaid across the terrain profile, ensuring zero guesswork during planning.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon-box">📄</span>
+                    <h4>Shareable PDF Reports</h4>
+                    <p>Export high-resolution survey snapshots and calculation summaries directly to clients, field technicians, and project managers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-section" id="faq">
+            <div class="section-header">
+                <span class="section-tag">Frequently Asked Questions</span>
+                <h2>Common RF Fresnel Questions</h2>
+                <p>Technical guidance for radio planners, ham operators, and network engineers.</p>
+            </div>
+
+            <div class="faq-container">
+                <details class="faq-item" name="rf-faq" open>
+                    <summary class="faq-question">What is a Fresnel Zone in radio frequency propagation?</summary>
+                    <div class="faq-answer">
+                        A Fresnel zone is a series of concentric prolate ellipsoidal regions surrounding the direct line-of-sight path between two antennas. The first Fresnel zone (F1) contains the majority of transmitted radio wave energy. Obstacles that penetrate this zone cause out-of-phase reflections that constructively or destructively interfere with the direct radio wave.
+                    </div>
+                </details>
+
+                <details class="faq-item" name="rf-faq">
+                    <summary class="faq-question">Why is 60% clearance considered the universal standard?</summary>
+                    <div class="faq-answer">
+                        Empirical measurements and electromagnetic theory demonstrate that as long as at least 60% of the First Fresnel Zone radius (0.60 F1) remains unobstructed, the propagation path loss is equal to free space loss (0 dB penalty). When clearance drops below 60%, knife-edge diffraction attenuation increases exponentially.
+                    </div>
+                </details>
+
+                <details class="faq-item" name="rf-faq">
+                    <summary class="faq-question">Does optical line of sight guarantee a working radio link?</summary>
+                    <div class="faq-answer">
+                        No. Optical line of sight only proves that the direct straight-line axis (0% clearance) is not blocked. However, radio waves spread out ellipsoidal into the Fresnel zone. A link can have optical line-of-sight while suffering 15 dB or more attenuation if a building or hilltop encroaches into the lower Fresnel zone.
+                    </div>
+                </details>
+
+                <details class="faq-item" name="rf-faq">
+                    <summary class="faq-question">How does earth curvature affect long-distance radio links?</summary>
+                    <div class="faq-answer">
+                        Due to the curvature of the Earth, the ground between two distant points rises relative to the chord connecting them. For links exceeding 5 km (3 miles), earth curvature can easily block the Fresnel zone. The RF Fresnel Calculator automatically accounts for the Earth bulge using standard 4/3 atmospheric refraction (K = 1.33).
+                    </div>
+                </details>
+
+                <details class="faq-item" name="rf-faq">
+                    <summary class="faq-question">What mobile platforms does the app support?</summary>
+                    <div class="faq-answer">
+                        RF Fresnel Calculator is available for both Android (Google Play) and iOS (Apple App Store for iPhone &amp; iPad). It supports offline operation, cached maps, and field GPS tracking.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Bottom Conversion CTA Banner -->
+        <div class="bottom-banner">
+            <h2>Download RF Fresnel Calculator Today</h2>
+            <p>
+                Eliminate link planning guesswork. Get instant 3D elevation profiling and Fresnel zone calculations in the palm of your hand.
+            </p>
+            <div class="cta-store-group" style="margin-bottom: 0;">
+                <a href="https://play.google.com/store/apps/details?id=com.devvratkalia.rffresnelcalculator" target="_blank" rel="noopener" class="store-btn" id="btn-bottom-playstore">
+                    <svg viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" fill="#00d2ff"/>
+                    </svg>
+                    <div class="store-btn-text">
+                        <span class="small">GET IT ON</span>
+                        <span class="big">Google Play</span>
+                    </div>
+                </a>
+
+                <a href="https://apps.apple.com/app/rf-fresnel-calculator/id6768409821" target="_blank" rel="noopener" class="store-btn" id="btn-bottom-appstore">
+                    <svg viewBox="0 0 170 170" fill="currentColor">
+                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.3-9.5-11.25-20.2-14.85-32.09-3.6-11.9-5.4-23.23-5.4-34.01 0-14.78 3.73-27.23 11.2-37.34 7.47-10.12 17.07-15.34 28.8-15.66 4.36 0 9.28 1.15 14.75 3.44 5.47 2.29 9.38 3.49 11.73 3.59 2.13 0 6.27-1.25 12.43-3.76 6.16-2.5 11.45-3.6 15.86-3.3 11.53.64 20.89 4.88 28.09 12.72-9.98 6.07-14.86 14.44-14.65 25.1.22 8.4 3.46 15.35 9.72 20.85 6.26 5.51 13.62 8.7 22.09 9.58-2.35 7.15-5.24 14.54-8.67 22.18zM119.22 31.84c0-7.05 2.56-13.78 7.68-20.2 5.12-6.41 11.66-10.66 19.63-12.74-.22 1.94-.48 3.72-.79 5.34-.85 4.9-2.73 9.7-5.63 14.39-2.9 4.7-6.55 8.27-10.95 10.72-4.4 2.44-8.5 3.82-12.3 4.14-.11-.53-.16-1.08-.16-1.65h.52z"/>
+                    </svg>
+                    <div class="store-btn-text">
+                        <span class="small">DOWNLOAD ON</span>
+                        <span class="big">App Store</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                &copy; 2026 Dev Studios / Devvrat Kalia. All rights reserved.
+            </div>
+            <ul class="footer-links">
+                <li><a href="../">Dev Studios Home</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="mailto:wekstuff@gmail.com">Contact Support</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
