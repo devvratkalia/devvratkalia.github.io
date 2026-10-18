@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebScraperAI Studio Help</title>
+  <meta name="description" content="How to use WebScraperAI Studio: choosing columns, collecting across pages, watches, exports, site rules, purchases and support.">
+  <link rel="icon" href="assets/app_icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site">
+      <a class="brand" href="index.html"><img src="assets/app_icon.png" alt="">WebScraperAI Studio</a>
+      <nav class="site">
+        <a href="index.html">Overview</a>
+        <a href="support.html" aria-current="page">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <article class="prose" style="padding: 40px 0;">
+      <h1 style="font-size: 40px;">Help</h1>
+      <p>Questions or problems? Email <a href="mailto:wekstuff@gmail.com?subject=WebScraperAI%20Studio%20support">wekstuff@gmail.com</a>. Please include your macOS version and, if it's about a site, its address.</p>
+
+      <h2>Getting started</h2>
+      <ol style="padding-left: 22px; color: var(--ink-soft);">
+        <li>Open the Practice Shop (File › Open the Practice Shop) and click <em>Catalog</em>.</li>
+        <li>Choose Collect › Auto-Detect Items. The app finds the repeating product cards and suggests columns.</li>
+        <li>Choose Collect › Collect This Page Only, then File › Export Rows to save the table.</li>
+      </ol>
+      <p>The same steps work on any page you open in the app's address bar.</p>
+
+      <h2>Choosing columns</h2>
+      <h3>Pick</h3>
+      <p>Choose Collect › Pick Values on the Page, then click a value. The app finds the matching value in every item and adds a column. Picking a link's text offers its address as a second column. Press Esc to stop picking.</p>
+      <h3>Auto-Detect</h3>
+      <p>The app looks for the repeating items on the page and suggests up to eight columns, such as titles, prices, ratings and links. If it chose the wrong items, the inspector's Items section offers the other groups it found.</p>
+      <h3>Describe</h3>
+      <p>Collect › Describe Columns lets you type the columns you want, separated by commas. On macOS 26 or later with Apple Intelligence turned on, Apple's on-device model matches your words to the page; nothing is sent anywhere. Otherwise the app matches your words itself. The sheet always says which one it used.</p>
+      <h3>Cleaning values</h3>
+      <p>Each column in the inspector can be renamed, moved, set to a type (text, number or price, date, link, or image address) and given a pattern that keeps only part of a value. Ratings like “Rated 4.5 out of 5” and counts like “128 reviews” become plain numbers automatically.</p>
+
+      <h2>Collecting across pages</h2>
+      <p>In the inspector's Pages section, choose <em>Follow “Next” pages</em> or <em>Scroll to load more</em>. The app finds the page's Next control itself; you can also type a CSS selector for it. Choose how many pages to read, up to 50 (5 at first), and how long to wait between them, 3 seconds at first (change the starting value in Settings › Collecting). Collect › Stop keeps the rows collected so far. Collecting across pages is part of the full unlock.</p>
+
+      <h2>Site rules (robots.txt)</h2>
+      <p>Before every automated step (another page, more scrolling, or a watch check) the app reads the site's robots.txt and follows it. If a site asks for a longer wait, the longer wait is used. The inspector's Site rules section shows what the current site allows.</p>
+      <ul>
+        <li><strong>“Asks automated tools not to collect this page.”</strong> The site's robots.txt disallows the page. You can still read and collect the page that's open, but the app won't go further on its own.</li>
+        <li><strong>“Couldn't read robots.txt, so automated collection is paused.”</strong> The site didn't answer, answered with a server error, or only offers an unencrypted http connection. The app tries again later. Collecting the open page still works.</li>
+      </ul>
+      <p>The app never answers cookie or consent prompts, never signs in for you, never solves CAPTCHAs and never downloads files. It closes ordinary pop-ups only with their own Close buttons, and you can turn that off per recipe. It names itself to sites as <code>WebScraperAIStudio</code>.</p>
+
+      <h2>Recipes</h2>
+      <p>File › Save Recipe (⌘S) keeps the page address, items, columns, paging settings and the last rows. The free version keeps 3 recipes; the full unlock keeps any number. File › Export Recipe File and Import Recipe File move recipes between Macs as <code>.webscraper.json</code> files.</p>
+
+      <h2>Watching for changes</h2>
+      <p>With a recipe saved, choose Collect › Watch for Changes. The app checks it again every hour, every 6 hours, daily or weekly, and compares the new rows with the last ones. Collect › Change History lists each check: new items, removed items and price drops or rises.</p>
+      <ul>
+        <li>Checks run only while the app is open. While a watch is on, closing the window keeps the app in the menu bar, where you can check now, open the window or quit. Quitting stops all checks.</li>
+        <li>Notifications are optional. macOS asks for permission the first time you save a watch with “Notify me when something changes” on.</li>
+        <li>Watches are part of the full unlock.</li>
+      </ul>
+
+      <h2>Exporting</h2>
+      <p>File › Export Rows saves CSV, tab-separated text or JSON, and with the full unlock, Excel workbooks (.xlsx) and SQLite databases. CSV and tab-separated files protect you from spreadsheet formulas hidden in page text: values starting with =, +, - or @ get a leading apostrophe. You can turn this off in Settings › Collecting.</p>
+
+      <h2>Keyboard shortcuts</h2>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead><tr><th>Action</th><th>Shortcut</th></tr></thead>
+          <tbody>
+            <tr><td>New recipe</td><td><kbd>⌘N</kbd></td></tr>
+            <tr><td>Open the Practice Shop</td><td><kbd>⇧⌘H</kbd></td></tr>
+            <tr><td>Import a recipe file</td><td><kbd>⌘O</kbd></td></tr>
+            <tr><td>Save recipe</td><td><kbd>⌘S</kbd></td></tr>
+            <tr><td>Export rows</td><td><kbd>⇧⌘E</kbd></td></tr>
+            <tr><td>Pick values on the page</td><td><kbd>⇧⌘P</kbd></td></tr>
+            <tr><td>Auto-detect items</td><td><kbd>⇧⌘A</kbd></td></tr>
+            <tr><td>Describe columns</td><td><kbd>⌘K</kbd></td></tr>
+            <tr><td>Collect rows</td><td><kbd>⌘↩</kbd></td></tr>
+            <tr><td>Collect this page only</td><td><kbd>⇧⌘↩</kbd></td></tr>
+            <tr><td>Stop</td><td><kbd>⌘.</kbd></td></tr>
+            <tr><td>Open location (address bar)</td><td><kbd>⌘L</kbd></td></tr>
+            <tr><td>Reload, back, forward</td><td><kbd>⌘R</kbd> <kbd>⌘[</kbd> <kbd>⌘]</kbd></td></tr>
+            <tr><td>Bookmark this page</td><td><kbd>⌘D</kbd></td></tr>
+            <tr><td>Show or hide the inspector</td><td><kbd>⌥⌘I</kbd></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Purchases</h2>
+      <ul>
+        <li>The full unlock is a one-time in-app purchase tied to your Apple Account. There's no subscription.</li>
+        <li>The 14-day trial gives you everything in the full unlock once. It doesn't renew and nothing is charged when it ends. Recipes, watches and rows you made are kept.</li>
+        <li>On another Mac, or after reinstalling, choose Restore Purchases in Settings › Purchases or on the unlock sheet.</li>
+        <li>If a purchase needs approval (Ask to Buy), the app unlocks by itself once it's approved.</li>
+        <li>Refunds are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</li>
+      </ul>
+
+      <h2>Your data</h2>
+      <p>Recipes, rows, change history and bookmarks are stored in the app's own container on your Mac. Settings › Privacy › Cookies and website data clears the built-in browser's cookies, logins and cached pages. Deleting a recipe removes its rows and history. Nothing is uploaded; see the <a href="privacy.html">privacy policy</a>.</p>
+    </article>
+
+    <footer class="site">
+      <span>© 2026 Devvrat Kalia</span>
+      <span><a href="index.html">Overview</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:wekstuff@gmail.com?subject=WebScraperAI%20Studio">Contact</a></span>
+    </footer>
+  </div>
+</body>
+</html>

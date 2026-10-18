@@ -1,147 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation & Support - WebScraperAI Studio</title>
-  <meta name="description" content="Official documentation, keyboard shortcuts, and developer support for WebScraperAI Studio on macOS.">
-  <link rel="canonical" href="https://devvratkalia.github.io/webscraperai-studio/support.html">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .doc-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 24px; }
-    .doc-section h2 { font-size: 20px; color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .doc-section h4 { font-size: 15px; color: #fff; margin: 18px 0 6px; }
-    .doc-section p, .doc-section li { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
-    .doc-section ul { padding-left: 20px; margin-top: 8px; }
-    .shortcut-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .shortcut-table th, .shortcut-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
-    .shortcut-table th { color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 12px; }
-    kbd { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; padding: 2px 7px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro", monospace; font-size: 12px; color: #fff; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebScraperAI Studio help has moved</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://devvratkalia.github.io/webscraperai_studio/support.html">
+<meta http-equiv="refresh" content="0; url=/webscraperai_studio/support.html">
+<script>location.replace("/webscraperai_studio/support.html" + location.hash);</script>
+<style>body{margin:0;padding:48px 20px;background:#f7f1e7;color:#2b2520;font:17px/1.5 -apple-system,BlinkMacSystemFont,system-ui,sans-serif}a{color:#9a3412}@media (prefers-color-scheme:dark){body{background:#1f1b18;color:#f6f0e8}a{color:#fdba74}}</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="index.html" class="logo">
-        <img src="assets/app_icon.png" alt="WebScraperAI Studio Icon" style="width: 32px; height: 32px; border-radius: 8px;">
-        WebScraperAI Studio
-      </a>
-      <nav>
-        <a href="https://devvratkalia.github.io/">All Apps</a>
-        <a href="index.html">Overview</a>
-        <a href="support.html" style="color: #fff;">Documentation</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/devvratkalia/WebScraperAI_Studio" target="_blank">GitHub</a>
-      </nav>
-    </header>
-
-    <section style="padding: 50px 0 30px;">
-      <h1 style="font-size: 36px; margin-bottom: 12px;">Documentation & User Guide</h1>
-      <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px;">Everything you need to know about visual scraping, AI selectors, and dataset exports in WebScraperAI Studio.</p>
-
-      <!-- Keyboard Shortcuts -->
-      <div class="doc-section">
-        <h2>⌨️ Native Keyboard Shortcuts</h2>
-        <p>Speed up your scraping workflows using native macOS keyboard shortcuts:</p>
-        <table class="shortcut-table">
-          <thead>
-            <tr>
-              <th>Action</th>
-              <th>Shortcut</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Run Active Scraper</td>
-              <td><kbd>⌘</kbd> <kbd>R</kbd></td>
-              <td>Executes current extraction pipeline and pagination across all configured pages.</td>
-            </tr>
-            <tr>
-              <td>Magic Auto-Detect</td>
-              <td><kbd>⌘</kbd> <kbd>D</kbd></td>
-              <td>Scans page structure, detects recurring item clusters, and loads a preview table.</td>
-            </tr>
-            <tr>
-              <td>AI Extraction Prompt</td>
-              <td><kbd>⌘</kbd> <kbd>K</kbd></td>
-              <td>Opens the AI assistant to synthesize CSS selectors from plain English.</td>
-            </tr>
-            <tr>
-              <td>Export Dataset</td>
-              <td><kbd>⌘</kbd> <kbd>E</kbd></td>
-              <td>Opens the export dialog for CSV, TSV, JSON, Excel XML, or SQLite.</td>
-            </tr>
-            <tr>
-              <td>Toggle Studio Inspector</td>
-              <td><kbd>⌘</kbd> <kbd>I</kbd></td>
-              <td>Opens or closes the right-hand selector and pagination inspector sidebar.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Core Workflows -->
-      <div class="doc-section">
-        <h2>🎯 Visual Scraping Modes</h2>
-        <h4>Browse vs Select Mode</h4>
-        <p>In the top toolbar, use the segmented mode switcher:</p>
-        <ul>
-          <li><strong>Browse Mode:</strong> Use the browser canvas normally (click links, log in, perform searches, dismiss dialogs).</li>
-          <li><strong>Select Mode:</strong> Hover over any item to highlight it. Clicking an item adds it to your extraction fields and automatically synthesizes a container and relative CSS selector.</li>
-        </ul>
-
-        <h4>Magic Auto-Detect (⌘D)</h4>
-        <p>Click "Auto-Detect" or press <kbd>⌘D</kbd> on any article feed, e-commerce catalog, or search result page. The engine analyzes DOM sibling trees, scores content richness (headings, links, prices, ratings), highlights the cards in green, and fills the dataset table with sample records.</p>
-      </div>
-
-      <!-- Data Cleaning & Column Analytics -->
-      <div class="doc-section">
-        <h2>📊 Dataset Studio & In-Place Cleaning</h2>
-        <h4>Column Quality Auditing</h4>
-        <p>Click the <strong>Stats</strong> button in the dataset preview header to open the analytics drawer. Review column fill rates (detect missing data), distinct value counts, and automatic Min/Average/Max calculations for price and numerical columns.</p>
-
-        <h4>1-Click Column Data Cleaning</h4>
-        <p>Click the <kbd>...</kbd> menu on any column header in the preview table to apply instantaneous transformations:</p>
-        <ul>
-          <li><strong>Clean Whitespace:</strong> Normalizes tabs, trailing spaces, and line breaks.</li>
-          <li><strong>Extract Number Only:</strong> Strips letters and symbols, leaving clean decimal numbers (e.g., "$129.95 / each" &rarr; "129.95").</li>
-          <li><strong>Strip Currency:</strong> Removes $, €, £, ¥, ₹, ₽ symbols.</li>
-          <li><strong>Strip HTML Tags:</strong> Removes raw markup and preserves clean inner text.</li>
-          <li><strong>Case Transformations:</strong> UPPERCASE, lowercase, and Title Case.</li>
-          <li><strong>Copy Column Values:</strong> Copies all values in that column as newline-delimited text.</li>
-        </ul>
-      </div>
-
-      <!-- Exporting Data -->
-      <div class="doc-section">
-        <h2>💾 Export Formats & Clipboard Sharing</h2>
-        <p>WebScraperAI Studio supports five export formats with zero cloud dependencies:</p>
-        <ul>
-          <li><strong>CSV:</strong> Standard RFC 4180 UTF-8 with proper comma and quotation escaping.</li>
-          <li><strong>TSV (Tab-Separated):</strong> Use the 1-Click "TSV (Excel)" button to copy table data and hit <kbd>⌘V</kbd> to paste directly into Microsoft Excel or Apple Numbers.</li>
-          <li><strong>JSON:</strong> Indented, pretty-printed JSON array of objects.</li>
-          <li><strong>Excel SpreadsheetML XML:</strong> Native Excel workbook XML with colored headers and typed numeric cells.</li>
-          <li><strong>SQLite 3:</strong> Standalone relational SQLite database file with automatic schema creation and indexed records.</li>
-        </ul>
-      </div>
-
-      <!-- Contact Support -->
-      <div class="doc-section" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.04);">
-        <h2>📬 Direct Developer Support</h2>
-        <p>Have questions, need assistance with a complex website, or want to suggest a feature? Direct developer support is available:</p>
-        <p style="margin-top: 10px; font-size: 15px;">
-          Developer: <strong>Devvrat Kalia</strong><br>
-          Email: <a href="mailto:wekstuff@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">wekstuff@gmail.com</a><br>
-          Portfolio: <a href="https://devvratkalia.github.io" target="_blank" style="color: #fff;">devvratkalia.github.io</a>
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <p>WebScraperAI Studio &bull; Developed by <a href="https://devvratkalia.github.io" style="color: #fff; text-decoration: none;">Devvrat Kalia</a></p>
-      <p style="margin-top: 8px; font-size: 13px; color: var(--text-muted);">&copy; 2026 Devvrat Kalia. All rights reserved.</p>
-    </footer>
-  </div>
+<p>This page has moved to <a href="/webscraperai_studio/support.html">devvratkalia.github.io/webscraperai_studio/support.html</a>.</p>
 </body>
 </html>
