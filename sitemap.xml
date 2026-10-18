@@ -55,18 +55,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://devvratkalia.github.io/docoffice/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://devvratkalia.github.io/docoffice/privacy.html</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://devvratkalia.github.io/privacy_policy_alarmx.html</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
