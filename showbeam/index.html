@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Showbeam Support</title>
+<style>
+  :root {
+    --house: #141118; --wing: #1E1A24; --rule: #2E2836; --text: #F2EEF6; --muted: #B7AFC2; --amber: #FFB547;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --house: #F3EFEA; --wing: #FFFFFF; --rule: #E2DBD2; --text: #1C1820; --muted: #5E5666; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--house); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 19px; margin: 36px 0 8px; }
+  .lede { color: var(--muted); margin: 0 0 28px; }
+  .contact { background: var(--wing); border: 1px solid var(--rule); border-left: 4px solid var(--amber); border-radius: 10px; padding: 16px 18px; }
+  .contact p { margin: 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--amber); }
+  kbd { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; border: 1px solid var(--rule); border-radius: 5px; padding: 1px 6px; background: var(--wing); }
+  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Showbeam Support</h1>
+  <p class="lede">Showbeam lets you draw on your screen while you present, or record a demo and fix the zoom, cursor and captions afterwards. It runs on macOS 15 or later.</p>
+
+  <div class="contact">
+    <p><strong>Need help?</strong> Email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>. Tell us your macOS version and what you were doing, and attach a screenshot if you can.</p>
+  </div>
+
+  <h2>Recording says screen recording is off</h2>
+  <ol>
+    <li>Open System Settings ▸ Privacy &amp; Security ▸ Screen &amp; System Audio Recording.</li>
+    <li>Turn on Showbeam.</li>
+    <li>Reopen Showbeam. macOS applies the change only after the app restarts; the <em>Reopen Showbeam</em> button in the app does this for you.</li>
+  </ol>
+  <p>Live mode, the editor, the demo take and exports of existing takes all work without this permission.</p>
+
+  <h2>Where are my takes and exports?</h2>
+  <p>Takes are saved in <code>~/Movies/Showbeam</code>, one <code>.showbeam</code> file per take. Exports go to <code>~/Movies/Showbeam/Exports</code> unless you choose another folder. In the Library, <em>Show in Finder</em> opens the folder.</p>
+
+  <h2>Drawing on screen</h2>
+  <p>Press <kbd>⌃⌥D</kbd> from any app to start drawing, and <kbd>esc</kbd> to stop. You can change every shortcut in Settings ▸ Shortcuts. The rehearsal (Help ▸ Run the Rehearsal Again) walks you through it.</p>
+
+  <h2>Showing keystrokes</h2>
+  <p>Turn on <em>Keys</em> when you start a take. macOS asks for Input Monitoring the first time. Keys are read only while a take records, only shortcuts unless you choose all keys, and never while a password field has focus.</p>
+
+  <h2>Captions and transcripts</h2>
+  <p>Captions use Apple's on-device speech recognition. The first time, macOS may need to download a speech model for your language; Showbeam asks before it does.</p>
+
+  <h2>Free features, Showbeam Full and the trial</h2>
+  <ul>
+    <li><strong>Free:</strong> all of Live mode, takes up to 5 minutes, the editor's cuts, speed, auto-zoom, cursor and framing, and 1080p MP4 export without a watermark.</li>
+    <li><strong>Showbeam Full</strong> is a one-time purchase. It removes the take-length limit and adds the webcam, keystrokes, the teleprompter, captions, chapters, 4K and 60 fps, GIF and vertical export.</li>
+    <li><strong>14-day Trial:</strong> everything in Showbeam Full, free for 14 days. Afterwards the free limits apply again, and your projects stay.</li>
+    <li><strong>Restore:</strong> Settings ▸ Purchases ▸ Restore Purchases, signed in with the Apple Account you bought with.</li>
+  </ul>
+
+  <h2>Removing Showbeam</h2>
+  <p>Delete takes from the Library or the Finder. Moving Showbeam to the Trash removes the app; your takes stay in <code>~/Movies/Showbeam</code> until you delete them.</p>
+
+  <h2>Privacy</h2>
+  <p>Showbeam has no account and no network access, and everything stays on your Mac. Read the <a href="privacy.html">privacy policy</a>.</p>
+
+  <footer>© 2026 Devvrat Kalia. Mac and macOS are trademarks of Apple Inc.</footer>
+</main>
+</body>
+</html>
