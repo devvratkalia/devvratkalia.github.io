@@ -3,77 +3,206 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Showbeam Support</title>
+<title>Showbeam — Record &amp; Present on your Mac</title>
+<meta name="description" content="Showbeam lets you draw on your screen while you present, or record a demo and fix the zoom, cursor and captions afterwards. Everything stays on your Mac.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:title" content="Showbeam — Record &amp; Present">
+<meta property="og:description" content="Draw on screen while you present, or record a demo and fix the zoom, cursor and captions afterwards.">
+<meta property="og:image" content="https://devvratkalia.github.io/showbeam/images/01-layers.jpg">
+<meta property="og:url" content="https://devvratkalia.github.io/showbeam/">
 <style>
   :root {
-    --house: #141118; --wing: #1E1A24; --rule: #2E2836; --text: #F2EEF6; --muted: #B7AFC2; --amber: #FFB547;
-  }
-  @media (prefers-color-scheme: light) {
-    :root { --house: #F3EFEA; --wing: #FFFFFF; --rule: #E2DBD2; --text: #1C1820; --muted: #5E5666; }
+    --house: #141118; --wing: #1E1A24; --raised: #26212E; --rule: #2E2836;
+    --text: #F2EEF6; --muted: #B7AFC2; --amber: #FFB547; --amber-deep: #E8962A;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--house); color: var(--text);
-    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Inter, sans-serif;
   }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
-  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
-  h2 { font-size: 19px; margin: 36px 0 8px; }
-  .lede { color: var(--muted); margin: 0 0 28px; }
+  a { color: var(--amber); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; font-size: 15px; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 20px; }
+  nav a:hover { color: var(--text); }
+  nav .home { margin-left: 0; color: var(--text); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 560px) {
+    nav { font-size: 14px; }
+    nav a { margin-left: 12px; }
+    nav a[href="#features"], nav a[href="privacy.html"] { display: none; }
+  }
+
+  /* The stage: a warm beam falling on the hero, as in the app's store art */
+  .hero { position: relative; text-align: center; padding: 56px 0 40px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; left: 50%; top: -120px; width: 900px; height: 760px; transform: translateX(-50%);
+    background: radial-gradient(ellipse 45% 70% at 50% 0%, rgba(255,181,71,0.28), rgba(255,181,71,0.06) 60%, transparent 75%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; }
+  .hero img.icon { width: 128px; height: 128px; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.55)); }
+  .hero h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.08; margin: 22px 0 10px; letter-spacing: -0.02em; }
+  .hero .sub { font-size: clamp(18px, 2.4vw, 22px); color: var(--muted); max-width: 680px; margin: 0 auto; }
+  .status { display: inline-flex; gap: 10px; align-items: center; margin-top: 26px; padding: 10px 18px; border: 1px solid var(--rule);
+            border-radius: 999px; background: var(--wing); font-size: 15px; color: var(--muted); }
+  .status .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+
+  .preview { margin: 34px auto 0; max-width: 960px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,181,71,0.35);
+             box-shadow: 0 30px 80px rgba(0,0,0,0.6); background: #000; }
+  .preview video { display: block; width: 100%; height: auto; }
+
+  section { padding: 56px 0 8px; }
+  h2 { font-size: clamp(26px, 3.4vw, 34px); line-height: 1.2; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .lede { color: var(--muted); margin: 0 0 26px; max-width: 720px; }
+
+  .modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .mode { background: var(--wing); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 24px; }
+  .mode h3 { margin: 0 0 6px; font-size: 20px; }
+  .mode p { margin: 0 0 10px; color: var(--muted); }
+  .mode ul { margin: 0; padding-left: 20px; }
+  .mode li { margin: 4px 0; }
+  .cue { display: inline-block; width: 28px; height: 4px; border-radius: 2px; background: var(--amber); margin-bottom: 12px; }
+
+  .gallery { display: grid; gap: 28px; }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--rule); }
+  figcaption { color: var(--muted); font-size: 15px; margin-top: 8px; text-align: center; }
+
+  .price { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .tier { background: var(--wing); border: 1px solid var(--rule); border-radius: 14px; padding: 20px 22px; }
+  .tier h3 { margin: 0 0 6px; font-size: 18px; }
+  .tier p { margin: 0; color: var(--muted); font-size: 16px; }
+  .tier.full { border-color: rgba(255,181,71,0.5); }
+
+  .support h3 { font-size: 19px; margin: 30px 0 6px; }
   .contact { background: var(--wing); border: 1px solid var(--rule); border-left: 4px solid var(--amber); border-radius: 10px; padding: 16px 18px; }
   .contact p { margin: 0; }
-  ul, ol { padding-left: 22px; }
-  li { margin: 6px 0; }
-  a { color: var(--amber); }
-  kbd { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; border: 1px solid var(--rule); border-radius: 5px; padding: 1px 6px; background: var(--wing); }
-  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
-  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  kbd, code { font: 15px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  kbd { border: 1px solid var(--rule); border-radius: 5px; padding: 1px 6px; background: var(--raised); }
+  footer { margin: 64px 0 40px; padding-top: 22px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px;
+           display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+  footer a { color: var(--muted); }
 </style>
 </head>
 <body>
-<main>
-  <h1>Showbeam Support</h1>
-  <p class="lede">Showbeam lets you draw on your screen while you present, or record a demo and fix the zoom, cursor and captions afterwards. It runs on macOS 15 or later.</p>
+<div class="wrap">
+  <nav>
+    <a class="home" href="../">Dev Studios</a>
+    <div><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#support">Support</a><a href="privacy.html">Privacy</a></div>
+  </nav>
 
-  <div class="contact">
-    <p><strong>Need help?</strong> Email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>. Tell us your macOS version and what you were doing, and attach a screenshot if you can.</p>
-  </div>
+  <header class="hero">
+    <img class="icon" src="images/icon.png" alt="Showbeam app icon" width="128" height="128">
+    <h1>Showbeam</h1>
+    <p class="sub">Draw on your screen while you present, or record a demo and fix the zoom, cursor and captions afterwards. Everything stays on your Mac.</p>
+    <div class="status"><span class="dot"></span>Coming soon to the Mac App Store &middot; macOS 15 or later</div>
+    <div class="preview">
+      <video src="images/preview.mp4" poster="images/preview-poster.jpg" autoplay muted loop playsinline controls preload="metadata"
+             aria-label="Showbeam's editor playing a demo take, switching to 9:16 and opening Export"></video>
+    </div>
+  </header>
 
-  <h2>Recording says screen recording is off</h2>
-  <ol>
-    <li>Open System Settings ▸ Privacy &amp; Security ▸ Screen &amp; System Audio Recording.</li>
-    <li>Turn on Showbeam.</li>
-    <li>Reopen Showbeam. macOS applies the change only after the app restarts; the <em>Reopen Showbeam</em> button in the app does this for you.</li>
-  </ol>
-  <p>Live mode, the editor, the demo take and exports of existing takes all work without this permission.</p>
+  <section id="features">
+    <h2>Two tools that share one set of ink</h2>
+    <p class="lede">Present live with ink and a spotlight, or record a take whose clicks, keys and drawings stay editable.</p>
+    <div class="modes">
+      <div class="mode">
+        <span class="cue"></span>
+        <h3>Live mode</h3>
+        <p>For presenting, in any app.</p>
+        <ul>
+          <li>Press <kbd>⌃⌥D</kbd> and draw arrows, circles, steps and notes</li>
+          <li>A cursor halo, a spotlight, or a curtain around one window</li>
+          <li>A whiteboard or chalkboard when you need a blank page</li>
+          <li>The Cue Strip keeps every tool and a presenter timer in one bar</li>
+        </ul>
+      </div>
+      <div class="mode">
+        <span class="cue"></span>
+        <h3>Record mode</h3>
+        <p>For demos you want to get right.</p>
+        <ul>
+          <li>Auto-zoom on every click and burst of typing, which you can change or remove</li>
+          <li>Smooth cursor, editable ink and callouts, on-device captions</li>
+          <li>Trim pauses with Tighten, add chapters, frame it on a background</li>
+          <li>Export 16:9, 9:16 that follows the cursor, square or GIF</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <h2>Where are my takes and exports?</h2>
-  <p>Takes are saved in <code>~/Movies/Showbeam</code>, one <code>.showbeam</code> file per take. Exports go to <code>~/Movies/Showbeam/Exports</code> unless you choose another folder. In the Library, <em>Show in Finder</em> opens the folder.</p>
+  <section>
+    <h2>See it</h2>
+    <p class="lede">Real screens from the app, with its built-in demo take.</p>
+    <div class="gallery">
+      <figure><img src="images/01-layers.jpg" alt="Showbeam's editor with screen, camera, mic, zoom, ink, keys, captions and chapters lanes" loading="lazy" width="1600" height="1000"><figcaption>Fix the zoom, cursor and captions after the take.</figcaption></figure>
+      <figure><img src="images/02-live.jpg" alt="Amber ink drawn over the editor with the Cue Strip toolbar" loading="lazy" width="1600" height="1000"><figcaption>Draw on anything while you present.</figcaption></figure>
+      <figure><img src="images/03-vertical.jpg" alt="The stage preview switched to a 9:16 vertical frame" loading="lazy" width="1600" height="1000"><figcaption>The same take, reframed for 9:16.</figcaption></figure>
+      <figure><img src="images/04-teleprompter.jpg" alt="The teleprompter floating over the editor" loading="lazy" width="1600" height="1000"><figcaption>A teleprompter that keeps pace with your voice.</figcaption></figure>
+      <figure><img src="images/05-export.jpg" alt="The export sheet with MP4, GIF and 9:16 options" loading="lazy" width="1600" height="1000"><figcaption>Export MP4, GIF and vertical video.</figcaption></figure>
+    </div>
+  </section>
 
-  <h2>Drawing on screen</h2>
-  <p>Press <kbd>⌃⌥D</kbd> from any app to start drawing, and <kbd>esc</kbd> to stop. You can change every shortcut in Settings ▸ Shortcuts. The rehearsal (Help ▸ Run the Rehearsal Again) walks you through it.</p>
+  <section id="pricing">
+    <h2>Free to start, one purchase for everything</h2>
+    <div class="price">
+      <div class="tier">
+        <h3>Free</h3>
+        <p>All of Live mode, takes up to 5 minutes, the editor's cuts, speed, auto-zoom, cursor and framing, and 1080p MP4 export without a watermark.</p>
+      </div>
+      <div class="tier full">
+        <h3>Showbeam Full</h3>
+        <p>A one-time purchase. Unlimited takes, the webcam, keystrokes, the teleprompter, captions, Tighten, chapters, 4K and 60 fps, GIF and vertical export.</p>
+      </div>
+      <div class="tier">
+        <h3>14-day Trial</h3>
+        <p>Everything in Showbeam Full, free for 14 days. Afterwards the free limits apply again, and your projects stay.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>Showing keystrokes</h2>
-  <p>Turn on <em>Keys</em> when you start a take. macOS asks for Input Monitoring the first time. Keys are read only while a take records, only shortcuts unless you choose all keys, and never while a password field has focus.</p>
+  <section id="support" class="support">
+    <h2>Support</h2>
+    <div class="contact">
+      <p><strong>Need help?</strong> Email <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>. Tell us your macOS version and what you were doing, and attach a screenshot if you can.</p>
+    </div>
 
-  <h2>Captions and transcripts</h2>
-  <p>Captions use Apple's on-device speech recognition. The first time, macOS may need to download a speech model for your language; Showbeam asks before it does.</p>
+    <h3>Recording says screen recording is off</h3>
+    <ol>
+      <li>Open System Settings ▸ Privacy &amp; Security ▸ Screen &amp; System Audio Recording.</li>
+      <li>Turn on Showbeam.</li>
+      <li>Reopen Showbeam. macOS applies the change only after the app restarts; the <em>Reopen Showbeam</em> button in the app does this for you.</li>
+    </ol>
+    <p>Live mode, the editor, the demo take and exports of existing takes all work without this permission.</p>
 
-  <h2>Free features, Showbeam Full and the trial</h2>
-  <ul>
-    <li><strong>Free:</strong> all of Live mode, takes up to 5 minutes, the editor's cuts, speed, auto-zoom, cursor and framing, and 1080p MP4 export without a watermark.</li>
-    <li><strong>Showbeam Full</strong> is a one-time purchase. It removes the take-length limit and adds the webcam, keystrokes, the teleprompter, captions, chapters, 4K and 60 fps, GIF and vertical export.</li>
-    <li><strong>14-day Trial:</strong> everything in Showbeam Full, free for 14 days. Afterwards the free limits apply again, and your projects stay.</li>
-    <li><strong>Restore:</strong> Settings ▸ Purchases ▸ Restore Purchases, signed in with the Apple Account you bought with.</li>
-  </ul>
+    <h3>Where are my takes and exports?</h3>
+    <p>Takes are saved in <code>~/Movies/Showbeam</code>, one <code>.showbeam</code> file per take. Exports go to <code>~/Movies/Showbeam/Exports</code> unless you choose another folder. In the Library, <em>Show in Finder</em> opens the folder.</p>
 
-  <h2>Removing Showbeam</h2>
-  <p>Delete takes from the Library or the Finder. Moving Showbeam to the Trash removes the app; your takes stay in <code>~/Movies/Showbeam</code> until you delete them.</p>
+    <h3>Drawing on screen</h3>
+    <p>Press <kbd>⌃⌥D</kbd> from any app to start drawing, and <kbd>esc</kbd> to stop. You can change every shortcut in Settings ▸ Shortcuts. The rehearsal (Help ▸ Run the Rehearsal Again) walks you through it.</p>
 
-  <h2>Privacy</h2>
-  <p>Showbeam has no account and no network access, and everything stays on your Mac. Read the <a href="privacy.html">privacy policy</a>.</p>
+    <h3>Showing keystrokes</h3>
+    <p>Turn on <em>Keys</em> when you start a take. macOS asks for Input Monitoring the first time. Keys are read only while a take records, only shortcuts unless you choose all keys, and never while a password field has focus.</p>
 
-  <footer>© 2026 Devvrat Kalia. Mac and macOS are trademarks of Apple Inc.</footer>
-</main>
+    <h3>Captions and transcripts</h3>
+    <p>Captions use Apple's on-device speech recognition. The first time, macOS may need to download a speech model for your language; Showbeam asks before it does.</p>
+
+    <h3>Purchases and restore</h3>
+    <p>Settings ▸ Purchases ▸ Restore Purchases, signed in with the Apple Account you bought with.</p>
+
+    <h3>Removing Showbeam</h3>
+    <p>Delete takes from the Library or the Finder. Moving Showbeam to the Trash removes the app; your takes stay in <code>~/Movies/Showbeam</code> until you delete them.</p>
+
+    <h3>Privacy</h3>
+    <p>Showbeam has no account and no network access, and everything stays on your Mac. Read the <a href="privacy.html">privacy policy</a>.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 Devvrat Kalia. Mac and macOS are trademarks of Apple Inc.</span>
+    <span><a href="../">Dev Studios</a> · <a href="privacy.html">Privacy</a></span>
+  </footer>
+</div>
 </body>
 </html>
