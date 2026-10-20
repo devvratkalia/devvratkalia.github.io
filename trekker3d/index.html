@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trekker3D: maps for the high trail</title>
+<meta name="description" content="3D terrain, offline maps, Indian Grid and GR, and position from steps when GPS drops. For iPhone, iPad and Android.">
+<meta name="theme-color" content="#E8ECEE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121513" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trekker3D: maps for the high trail">
+<meta property="og:description" content="3D terrain, offline maps, Indian Grid and GR, and position from steps when GPS drops. For iPhone, iPad and Android.">
+<meta property="og:url" content="https://devvratkalia.github.io/trekker3d/">
+<meta property="og:image" content="https://devvratkalia.github.io/trekker3d/images/link-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://devvratkalia.github.io/trekker3d/">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://devvratkalia.github.io/trekker3d/#app",
+   "name": "Trekker3D",
+   "operatingSystem": "iOS, iPadOS, Android",
+   "applicationCategory": "TravelApplication",
+   "description": "Offline trekking maps with 3D terrain, Indian Grid and GR, and dead reckoning.",
+   "author": {
+    "@type": "Person",
+    "name": "Devvrat Kalia"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "installUrl": [
+    "https://play.google.com/store/apps/details?id=com.devvratkalia.trekker3d"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which maps can I use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Four base maps: the OpenTopoMap topographic sheet, the OpenStreetMap street map, and Google Maps in terrain or satellite view. Switch in Settings › Map or in Base map & layers. With a connection, Google's satellite photos also cover the ground in 3D. Google's maps can't be saved for offline use; the topographic and street maps can. Every layer you add has its own transparency."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is included, and what does Access add?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Included with the app: online 2D maps (OpenTopoMap, OpenStreetMap and Google's map), Points, Routes and navigation, Route sharing, Measure, the Indian Grid with GRs, UTM, MGRS and latitude and longitude, both SOS tools, browsing the Trek library, and viewing and replaying your past Tracks. Access is a subscription, monthly or yearly. It adds 3D terrain and Earth view, offline Areas, position without GPS, Sighting, Track recording with voice notes, photos and videos, layers and custom imagery, GPX and bundle import and export, and Trek fly-throughs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does the 30-day free trial work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The monthly plan starts with a 30-day free trial for people who haven't had one. The yearly plan has no trial. The app shows the price before you buy, and whether the trial applies to you. After the trial, the monthly price, [PRICE], is charged unless you cancel before the trial ends."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I cancel, and what happens to my data when Access ends?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On iPhone and iPad, cancel in your Apple Account's subscription settings at least 24 hours before the end of the current period. On Android, cancel in Google Play > Payments & subscriptions. When Access ends, everything you saved stays on your device. You can still view your Points, Routes and Tracks, replay your Tracks, and export them. The app goes back to the Included features. Restore Purchases is on the Access sheet and in Settings."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it work offline? How do Areas work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Before you leave, download an Area: a region of map and elevation saved on your device. In that Area the map, its heights and the 3D terrain work with no signal at all. The Trek library and its lines are bundled in the app and need no connection. The Earth view and Google's 2D map need a connection."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How accurate is my position without GPS?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is an estimate. When GPS drops, Trekker3D works out your position from your steps and the compass since the last Fix, and calls it an Estimate. The map draws it with a wedge that widens the longer GPS stays away, because the estimate grows less sure with every step. You can set your stride in Settings. Treat the Estimate as a guide, check it against the ground, and carry a paper map and a compass."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it support the Indian Grid and GRs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Your position reads as an Indian Grid reference (Everest 1830 datum, Kalianpur zones), with 6, 8 or 10-figure GRs. Type a GR off your paper map into \"Go to a place or GR\" to go there, navigate to it, and turn on 1 km or 10 km grid lines. There is a mils option. UTM, MGRS, and latitude and longitude in decimal degrees or degrees, minutes and seconds are also supported."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which devices does it run on?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "iPhone and iPad with iOS 17 or later. On a Mac, Trekker3D runs as the iPad app (\"Designed for iPad\"), with keyboard shortcuts: M to mark, R to route, S for SOS and T to tilt. On Android it runs on phones, tablets and foldables, folded or open, and keeps itself up to date through Google Play."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What are the Night colours?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Night turns the screen to one dim colour at minimum brightness so it doesn't spoil your eyes in the dark. Pick red (the default), amber or green. By day, choose Basalt (dark, the default) or Glacier (light)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need an account?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. There is no account and no sign-in. Apple or Google handles payment for Access, and the app receives only what you own and when it ends."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What data leaves my device?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your Points, Routes, Tracks, voice notes, photos and videos stay on your device. Trekker3D has no server and no analytics or advertising of its own. To draw maps and heights, the app asks map and elevation services for the area you are looking at: OpenTopoMap and OpenStreetMap for tiles, Google Maps when you pick Google's map, AWS Terrain Tiles and OpenTopoData's public API for elevation, Google's Elevation API only while Google's map is on screen, and Google's 3D map when you open the Earth view. These requests reveal the area being viewed to the service that answers them, and carry no account or identifier from us. When you use Google's map or the Earth view, the Google Maps SDK sends Google crash and performance data, a pseudonymous SDK identifier, request metadata (device model, OS version, SDK version), your IP address, and map interaction events such as panning and zooming. On Android, when you scan a Route's QR code, Google ML Kit reads the camera image on your device and sends Google device information, the app's package and version, per-installation identifiers, performance metrics and error codes. No other library in the app sends data. The privacy policy has the details: https://devvratkalia.github.io/trekker3d/privacy.html"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there a monthly allowance for the Earth view and Google elevation?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is a fair-use allowance on each device. The Earth view can be opened 60 times a month per device. Google's Elevation API, used only for live profiles while Google's 2D map is shown, has an allowance of 500 requests a month per device; after that, the app shows a notice. The 3D terrain map draws from open elevation data, not from the Earth view."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Trekker3D a rescue service?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Trekker3D is a navigation aid, not a rescue service. The SOS tools (Morse by torch or screen, your position as text, a hand-off to the Meshtastic app) help you signal and share where you are. Carry a paper map and a compass, and tell someone your plan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I share a Route?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Open the Route and share it as a file, a link or a QR code. A link keeps the Route in the part of the address after \"#\", which browsers do not send to our website. Route sharing is included."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which languages does it speak?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "English and Hindi."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I get help?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Email wekstuff@gmail.com. We read every message. Since we hold none of your data, we can't look anything up about you, so tell us your device and what you were doing."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Dev Studios",
+     "item": "https://devvratkalia.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Trekker3D",
+     "item": "https://devvratkalia.github.io/trekker3d/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="bar">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Dev Studios</a><span>/</span><a class="brand" href="./"><img src="images/favicon.png" alt="" width="28" height="28">Trekker3D</a></nav>
+  <nav><a href="./#faq">FAQ</a><a href="./#support">Support</a><a href="privacy.html">Privacy</a></nav>
+</header>
+<main>
+<section class="hero">
+  <img class="icon" src="images/icon.png" alt="Trekker3D icon" width="128" height="128">
+  <h1>Know where you stand,<br>in 3D and on the grid</h1>
+  <p class="lead">Trekker3D shows the ground in 3D, keeps the map with you offline, and reads your position as an Indian Grid reference, UTM or lat/long. When GPS drops, it keeps your place from steps and compass.</p>
+  <div class="stores">
+    <a class="store" href="https://play.google.com/store/apps/details?id=com.devvratkalia.trekker3d"><span>Google Play</span><small>Android</small></a>
+  </div>
+  <p class="note">2D maps, Points, Routes, Measure, the grids, SOS and the Trek library are included. 3D, offline Areas, Tracks and position without GPS come with Access, a subscription with a 30-day free trial on the monthly plan.</p>
+</section>
+
+<section class="shots" aria-label="Screenshots">
+  <div class="strip">
+    <img src="images/screen-1.jpg" alt="The Har Ki Dun valley in 3D with satellite imagery, and the app screen" width="600" height="1304" loading="lazy">
+    <img src="images/screen-2.jpg" alt="Following a Route offline with the next waypoint, bearing and ETA" width="600" height="1304" loading="lazy">
+    <img src="images/screen-3.jpg" alt="Topographic map with Indian Grid lines and a live grid reference" width="600" height="1304" loading="lazy">
+    <img src="images/screen-4.jpg" alt="A trek replayed with voice notes on the line and a height profile" width="600" height="1304" loading="lazy">
+  </div>
+</section>
+
+<section class="features">
+  <h2>What it does</h2>
+  <div class="grid">
+    <article><h3>3D terrain</h3><p>The ground in 3D from open elevation data, saved with your offline Areas. Google's photorealistic Earth view when you are online.</p></article>
+    <article><h3>Four base maps</h3><p>OpenTopoMap's topographic sheet, OpenStreetMap's street map, or Google Maps in terrain or satellite view; online, satellite photos cover the 3D ground too. Layers add contours, hillshade, your own files and scanned maps, each with its own transparency.</p></article>
+    <article><h3>Indian Grid and GR</h3><p>Readouts, entry and grid lines in Indian Grid with 6, 8 or 10-figure GRs, plus UTM, MGRS and lat/long.</p></article>
+    <article><h3>Offline Areas</h3><p>Download the map and elevation for an area and use both with no signal.</p></article>
+    <article><h3>Position without GPS</h3><p>When the fix drops, steps and compass keep an estimate, drawn with its widening uncertainty.</p></article>
+    <article><h3>Routes and Measure</h3><p>Draw a Route, see its profile and ground distance, navigate it, and share it as a link or QR code.</p></article>
+    <article><h3>Tracks and Moments</h3><p>Record the day with voice notes, photos and short videos, then replay it on the map.</p></article>
+    <article><h3>Sighting</h3><p>Point at a summit in a first-person 3D view and name it.</p></article>
+    <article><h3>SOS</h3><p>Morse by torch or screen, your position as text, and a hand-off to Meshtastic.</p></article>
+    <article><h3>Trek library</h3><p>45 well-known treks in 17 countries, with lines from OpenStreetMap and facts checked against two sources.</p></article>
+  </div>
+</section>
+
+<section class="devices">
+  <h2>Where it runs</h2>
+  <div class="grid">
+    <article><h3>iPhone</h3><p>iOS 17 or later</p></article>
+    <article><h3>iPad</h3><p>iPadOS 17 or later, any window size</p></article>
+    <article><h3>Android</h3><p>Phones, tablets and foldables</p></article>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <h2>Questions and answers</h2>
+  <details>
+    <summary>Which maps can I use?</summary>
+    <p>Four base maps: the OpenTopoMap topographic sheet, the OpenStreetMap street map, and Google Maps in terrain or satellite view. Switch in Settings › Map or in Base map &amp; layers. With a connection, Google's satellite photos also cover the ground in 3D. Google's maps can't be saved for offline use; the topographic and street maps can. Every layer you add has its own transparency.</p>
+  </details>
+  <details>
+    <summary>What is included, and what does Access add?</summary>
+    <p>Included with the app: online 2D maps (OpenTopoMap, OpenStreetMap and Google's map), Points, Routes and navigation, Route sharing, Measure, the Indian Grid with GRs, UTM, MGRS and latitude and longitude, both SOS tools, browsing the Trek library, and viewing and replaying your past Tracks.</p>
+    <p>Access is a subscription, monthly or yearly. It adds 3D terrain and Earth view, offline Areas, position without GPS, Sighting, Track recording with voice notes, photos and videos, layers and custom imagery, GPX and bundle import and export, and Trek fly-throughs.</p>
+  </details>
+  <details>
+    <summary>How does the 30-day free trial work?</summary>
+    <p>The monthly plan starts with a 30-day free trial for people who haven't had one. The yearly plan has no trial. The app shows the price before you buy, and whether the trial applies to you. After the trial, the monthly price, [PRICE], is charged unless you cancel before the trial ends.</p>
+  </details>
+  <details>
+    <summary>How do I cancel, and what happens to my data when Access ends?</summary>
+    <p>On iPhone and iPad, cancel in your Apple Account's subscription settings at least 24 hours before the end of the current period. On Android, cancel in Google Play &gt; Payments &amp; subscriptions.</p>
+    <p>When Access ends, everything you saved stays on your device. You can still view your Points, Routes and Tracks, replay your Tracks, and export them. The app goes back to the Included features. Restore Purchases is on the Access sheet and in Settings.</p>
+  </details>
+  <details>
+    <summary>Does it work offline? How do Areas work?</summary>
+    <p>Yes. Before you leave, download an Area: a region of map and elevation saved on your device. In that Area the map, its heights and the 3D terrain work with no signal at all. The Trek library and its lines are bundled in the app and need no connection.</p>
+    <p>The Earth view and Google's 2D map need a connection.</p>
+  </details>
+  <details>
+    <summary>How accurate is my position without GPS?</summary>
+    <p>It is an estimate. When GPS drops, Trekker3D works out your position from your steps and the compass since the last Fix, and calls it an Estimate. The map draws it with a wedge that widens the longer GPS stays away, because the estimate grows less sure with every step. You can set your stride in Settings.</p>
+    <p>Treat the Estimate as a guide, check it against the ground, and carry a paper map and a compass.</p>
+  </details>
+  <details>
+    <summary>Does it support the Indian Grid and GRs?</summary>
+    <p>Yes. Your position reads as an Indian Grid reference (Everest 1830 datum, Kalianpur zones), with 6, 8 or 10-figure GRs. Type a GR off your paper map into "Go to a place or GR" to go there, navigate to it, and turn on 1 km or 10 km grid lines. There is a mils option.</p>
+    <p>UTM, MGRS, and latitude and longitude in decimal degrees or degrees, minutes and seconds are also supported.</p>
+  </details>
+  <details>
+    <summary>Which devices does it run on?</summary>
+    <p>iPhone and iPad with iOS 17 or later. On a Mac, Trekker3D runs as the iPad app ("Designed for iPad"), with keyboard shortcuts: M to mark, R to route, S for SOS and T to tilt.</p>
+    <p>On Android it runs on phones, tablets and foldables, folded or open, and keeps itself up to date through Google Play.</p>
+  </details>
+  <details>
+    <summary>What are the Night colours?</summary>
+    <p>Night turns the screen to one dim colour at minimum brightness so it doesn't spoil your eyes in the dark. Pick red (the default), amber or green. By day, choose Basalt (dark, the default) or Glacier (light).</p>
+  </details>
+  <details>
+    <summary>Do I need an account?</summary>
+    <p>No. There is no account and no sign-in. Apple or Google handles payment for Access, and the app receives only what you own and when it ends.</p>
+  </details>
+  <details>
+    <summary>What data leaves my device?</summary>
+    <p>Your Points, Routes, Tracks, voice notes, photos and videos stay on your device. Trekker3D has no server and no analytics or advertising of its own.</p>
+    <p>To draw maps and heights, the app asks map and elevation services for the area you are looking at: OpenTopoMap and OpenStreetMap for tiles, Google Maps when you pick Google's map, AWS Terrain Tiles and OpenTopoData's public API for elevation, Google's Elevation API only while Google's map is on screen, and Google's 3D map when you open the Earth view. These requests reveal the area being viewed to the service that answers them, and carry no account or identifier from us.</p>
+    <p>When you use Google's map or the Earth view, the Google Maps SDK sends Google crash and performance data, a pseudonymous SDK identifier, request metadata (device model, OS version, SDK version), your IP address, and map interaction events such as panning and zooming. On Android, when you scan a Route's QR code, Google ML Kit reads the camera image on your device and sends Google device information, the app's package and version, per-installation identifiers, performance metrics and error codes. No other library in the app sends data.</p>
+    <p>The privacy policy has the details: https://devvratkalia.github.io/trekker3d/privacy.html</p>
+  </details>
+  <details>
+    <summary>Is there a monthly allowance for the Earth view and Google elevation?</summary>
+    <p>There is a fair-use allowance on each device. The Earth view can be opened 60 times a month per device. Google's Elevation API, used only for live profiles while Google's 2D map is shown, has an allowance of 500 requests a month per device; after that, the app shows a notice.</p>
+    <p>The 3D terrain map draws from open elevation data, not from the Earth view.</p>
+  </details>
+  <details>
+    <summary>Is Trekker3D a rescue service?</summary>
+    <p>No. Trekker3D is a navigation aid, not a rescue service. The SOS tools (Morse by torch or screen, your position as text, a hand-off to the Meshtastic app) help you signal and share where you are. Carry a paper map and a compass, and tell someone your plan.</p>
+  </details>
+  <details>
+    <summary>How do I share a Route?</summary>
+    <p>Open the Route and share it as a file, a link or a QR code. A link keeps the Route in the part of the address after "#", which browsers do not send to our website. Route sharing is included.</p>
+  </details>
+  <details>
+    <summary>Which languages does it speak?</summary>
+    <p>English and Hindi.</p>
+  </details>
+  <details>
+    <summary>How do I get help?</summary>
+    <p>Email wekstuff@gmail.com. We read every message. Since we hold none of your data, we can't look anything up about you, so tell us your device and what you were doing.</p>
+  </details>
+</section>
+
+<section id="support" class="support">
+  <h2>Support</h2>
+  <p>In the app, go to <strong>Settings › Contact Support</strong>: it starts an email with the app version filled in. Or write to <a href="mailto:wekstuff@gmail.com">wekstuff@gmail.com</a>. Tell us which device you use and what happened.</p>
+  <p>Your email is used only to reply to you.</p>
+</section>
+</main>
+<footer>
+  <p>Trekker3D is a navigation aid, not a rescue service.</p>
+  <p><a href="../">Dev Studios Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:wekstuff@gmail.com">Contact Support</a></p>
+  <p class="small">© 2026 Dev Studios / Devvrat Kalia. App Store is a service mark of Apple Inc. Google Play is a trademark of Google LLC.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open a Route in Trekker3D</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="doc">
+  <h1>A Route for Trekker3D</h1>
+  <p>Someone shared a Route with you. If Trekker3D is on this phone, it opens now. If not, get the app, then open this link again.</p>
+  <p><a id="open" href="trekker3d://r">Open in Trekker3D</a></p>
+  <p><a href="../">About Trekker3D</a></p>
+  <p class="small">The Route is in this link after the "#", which your browser never sends to this website.</p>
+</main>
+<script>
+  // Hand the Route (the part after #) to the app. Nothing is sent anywhere.
+  var code = location.hash.slice(1);
+  if (code) {
+    var target = 'trekker3d://r#' + code;
+    document.getElementById('open').href = target;
+    location.replace(target);
+  }
+</script>
+</body>
+</html>
