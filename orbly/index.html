@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orbly Support: private 360° and VR video player</title>
-<meta name="description" content="Help for Orbly, the private offline player for your own 180°, 360° and 3D VR videos. Supported formats, adding videos, the Format sheet, headset view, App lock, purchases and contact.">
+<meta name="description" content="Help for Orbly, the private offline player for your own 180°, 360° and 3D VR videos. Supported formats, adding videos, the Format sheet, headset view, App lock, rewarded ads, going ad-free, purchases and contact.">
 <meta name="theme-color" content="#EEF3F7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D151D" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
@@ -68,6 +68,7 @@
   <li>Headset view</li>
   <li>Works offline</li>
   <li>No account</li>
+  <li>Free with ads, or ad-free</li>
 </ul>
 
 <h2 id="formats">Which videos play</h2>
@@ -81,7 +82,7 @@
   </tbody>
 </table>
 </div>
-<p>On iPhone and iPad, files in other containers (MKV, WebM, WMV or AVI) can be added to your library but don't play yet. Tapping one shows <em>Can't Play This File</em> straight away, without using a free play. To watch one, convert it to MP4 with H.264 or HEVC video using a converter on your computer.</p>
+<p>On iPhone and iPad, files in other containers (MKV, WebM, WMV or AVI) can be added to your library but don't play yet. Tapping one shows <em>Can't Play This File</em> straight away, without an ad or a free play. To watch one, convert it to MP4 with H.264 or HEVC video using a converter on your computer.</p>
 <p class="fine">Orbly does not play copy-protected (DRM) videos from streaming services, and it does not stream from websites.</p>
 
 <h2 id="add">Adding videos</h2>
@@ -110,7 +111,7 @@
 <h2 id="watching">Watching</h2>
 <ul>
   <li>Move your device, or drag with a finger, to look around. The compass strip at the top shows which way you face; it hides itself after a few seconds.</li>
-  <li><strong>Recenter</strong> turns the view back to the video's front.</li>
+  <li>The <strong>Recenter view</strong> button (the target icon) turns the view back to the video's front.</li>
   <li>Tap the picture to show or hide the controls. Drag the horizon bar to move through the video, or go back 10 seconds.</li>
 </ul>
 
@@ -126,8 +127,21 @@
 </ul>
 <p>The check is done by the system. Orbly only learns whether it succeeded, never your face, fingerprint or passcode. If the unlock fails, use your device passcode, PIN or pattern instead.</p>
 
-<h2 id="premium">Free plays and Premium</h2>
-<p>Without Premium, Orbly plays a limited number of videos each day for free (currently 3, reset daily). Files that can't play never use one. Premium plays any video, any time. It comes three ways, and the price is shown in your currency before you pay:</p>
+<h2 id="free">Free with rewarded ads</h2>
+<p>Orbly is free to use with rewarded ads, and you always see the reward before an ad starts. When you tap a video, Orbly says <em>Watch one short ad to play this video.</em> Tap <strong>Watch ad to play</strong>, watch the ad to the end, and that video plays. <strong>Not now</strong> closes the prompt without an ad.</p>
+<ul>
+  <li><strong>One ad plays one video.</strong> Nothing carries over: the next video asks again.</li>
+  <li><strong>Closing an ad early</strong> doesn't unlock the video. Tap it again to watch a fresh ad.</li>
+  <li><strong>No ad available?</strong> When no ad can be shown, for example when you are offline, you can still play 3 videos a day for free. They come back every day.</li>
+  <li>Files that can't play never ask for an ad or use a free play.</li>
+</ul>
+<p>Ads come from ironSource Ads and Unity Ads (both run by Unity Technologies). They are requested as non-personalized, Orbly never asks to track you, and ads never see your videos, file names or library. The <a href="privacy.html#ads">privacy policy</a> says exactly what the ad networks receive.</p>
+
+<h3 id="report-ad">Report an ad</h3>
+<p>If an ad is offensive, misleading, broken or won't close, tap <strong>Settings › Report an ad</strong>. It opens a ready-made email to us in your mail app; nothing is sent until you send it. You can also write to <a href="mailto:wekstuff@gmail.com?subject=Orbly%3A%20report%20an%20ad">wekstuff@gmail.com</a> directly. Tell us roughly when you saw it, what it advertised, and your device, and we will pass it to the ad network. We don't create or choose the ads ourselves.</p>
+
+<h2 id="premium">Go ad-free with Premium</h2>
+<p>Premium removes ads: every video plays straight away, with no ads and no daily limit, and the ad software never starts. Tap <strong>Go ad-free</strong> in Settings or on any ad prompt. Premium comes three ways, and the price is shown in your currency before you pay:</p>
 <div class="grid">
   <div class="card"><h3>Lifetime</h3><p>$19.99 once. Not a subscription: nothing renews and there is nothing to cancel.</p></div>
   <div class="card"><h3>Yearly</h3><p>$14.99 a year, renews automatically until you cancel.</p></div>
@@ -136,7 +150,7 @@
 <p class="fine">US prices; other countries are priced by the store in local currency.</p>
 
 <h2 id="restore">Restore purchases</h2>
-<p>Orbly has no account: your purchase belongs to your store account. On a new device, or after reinstalling, sign in to the same store account, then open <strong>Settings › Restore purchases</strong> (it is also at the foot of the <strong>Go Premium</strong> screen, called <strong>Go Ad-Free</strong> on Android).</p>
+<p>Orbly has no account: your purchase belongs to your store account. On a new device, or after reinstalling, sign in to the same store account, then open <strong>Settings › Restore purchases</strong> (it is also at the foot of the <strong>Go Ad-Free</strong> screen).</p>
 <ul>
   <li><strong>iPhone and iPad:</strong> use the same Apple Account you bought with.</li>
   <li><strong>Android:</strong> use the same Google account you bought with on Google Play.</li>
@@ -147,23 +161,27 @@
 <p>Cancel at least 24 hours before the current period ends to avoid the next charge. Premium stays on until the end of the period you paid for. Deleting the app does not cancel a subscription.</p>
 <details>
   <summary>On iPhone or iPad</summary>
-  <p>In Orbly, open <strong>Settings › Manage subscription</strong>. Or open the Settings app, tap your name, then <strong>Subscriptions</strong>, choose Orbly and tap <strong>Cancel Subscription</strong>.</p>
+  <p>In Orbly, open <strong>Settings › Manage subscription</strong> (shown while you have a subscription). Or open the Settings app, tap your name, then <strong>Subscriptions</strong>, choose Orbly and tap <strong>Cancel Subscription</strong>.</p>
   <p>Refunds are handled by Apple: request one at <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</p>
 </details>
 <details>
   <summary>On Android</summary>
-  <p>In Orbly, open <strong>Settings › Manage subscription</strong>. Or open the Google Play Store app, tap your profile picture, then <strong>Payments &amp; subscriptions › Subscriptions</strong>, choose Orbly and tap <strong>Cancel subscription</strong>.</p>
+  <p>In Orbly, open <strong>Settings › Manage subscription</strong> (shown while you have a subscription). Or open the Google Play Store app, tap your profile picture, then <strong>Payments &amp; subscriptions › Subscriptions</strong>, choose Orbly and tap <strong>Cancel subscription</strong>.</p>
   <p>Refunds are handled by Google Play under its refund policy.</p>
 </details>
 
 <h2 id="faq">Questions</h2>
 <details>
   <summary>Does Orbly upload or share my videos?</summary>
-  <p>No. Orbly reads your videos where they are, on your device, and never uploads them. There is no account and no analytics. See the <a href="privacy.html">privacy policy</a>.</p>
+  <p>No. Orbly reads your videos where they are, on your device, and never uploads them. There is no account and no analytics of our own. The ad networks in the free version receive device and ad-interaction data, but never your videos or your library. See the <a href="privacy.html">privacy policy</a>.</p>
 </details>
 <details>
   <summary>Does it work without the internet?</summary>
-  <p>Yes. Playing your videos needs no connection. The store needs one to show prices, take a purchase or restore it.</p>
+  <p>Yes. With Premium, playing your videos needs no connection. In the free version an ad needs a connection; offline, you can still play 3 videos a day for free. The store needs a connection to show prices, take a purchase or restore it.</p>
+</details>
+<details>
+  <summary>It says no ad is available.</summary>
+  <p>Ads need an internet connection, and sometimes the ad networks have none to show. You can still play 3 videos a day for free, and ads usually come back after a while. Premium plays every video without ads.</p>
 </details>
 <details>
   <summary>My video looks doubled, split or stretched.</summary>
@@ -171,7 +189,7 @@
 </details>
 <details>
   <summary>The view drifts or faces the wrong way.</summary>
-  <p>Tap <strong>Recenter</strong>. If your device has no gyroscope, drag to look around instead.</p>
+  <p>Tap the <strong>Recenter view</strong> button. If your device has no gyroscope, drag to look around instead.</p>
 </details>
 <details>
   <summary>A video I added no longer opens.</summary>
@@ -184,7 +202,7 @@
 
 <h2 id="contact">Contact</h2>
 <div class="card summary">
-  <p>Write to <a href="mailto:wekstuff@gmail.com?subject=Orbly%20support">wekstuff@gmail.com</a>, or tap <strong>Settings › Contact support</strong> in the app.</p>
+  <p>Write to <a href="mailto:wekstuff@gmail.com?subject=Orbly%20support">wekstuff@gmail.com</a>. <strong>Settings › Contact support</strong> in the app opens this page.</p>
   <p>Tell us your device, its system version, and the video's file type, and we can usually answer in one reply. Please don't attach videos. We use your address only to answer you.</p>
 </div>
 
